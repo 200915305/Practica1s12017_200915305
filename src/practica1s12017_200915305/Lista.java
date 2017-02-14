@@ -10,10 +10,10 @@ public class Lista {
     NodoLista ultimol;
     
     
-    public void AgregarLista(char a, int b){
+    public void AgregarLista(char a){
     
         
-      NodoLista nuevol = new NodoLista(a, 0);
+      NodoLista nuevol = new NodoLista(a);
            
       if(primerol==null){
           nuevol.sig=primerol;

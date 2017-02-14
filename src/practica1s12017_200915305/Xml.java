@@ -4,20 +4,21 @@ package practica1s12017_200915305;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import org.jdom.Document;			// |
-import org.jdom.Element;			// |\ Librerias
-import org.jdom.JDOMException;		// |/ JDOM
+import org.jdom.Document;			
+import org.jdom.Element;			
+import org.jdom.JDOMException;		
 import org.jdom.input.SAXBuilder;
 
 public class Xml {
     
-    
+    ListaDiccionario diccionario =new ListaDiccionario();
+   public static Panel panel = new Panel();
    public Xml(){
    
    }
    
    public void cargarXml(String path)
-	{
+	{ 
 		//Se crea un SAXBuilder para poder parsear el archivo
 		SAXBuilder builder = new SAXBuilder();
 		File xmlFile = new File( path);
@@ -78,13 +79,17 @@ public class Xml {
                             for (int j = 0; j < l.size(); j++) {
                                 Element n =(Element)l.get(j);
                                 String x = n.getText();
-                                practica1s12017_200915305.Tablero.listaDiccionario.add(x);
-                                System.out.println("Palabra=>  "+ n.getText());
+                              //  practica1s12017_200915305.Tablero.listaDiccionario.add(x);
+                                diccionario.AgregarDiccionario(x);
+                          
+                              //  System.out.println("Palabra=>  "+ n.getText());
                          }
                   
                     }
+                   diccionario.MostrarDiccionario();
+                   practica1s12017_200915305.Panel.boton=true;
                    
-			
+                   
 		}catch ( IOException io ) {
 			System.out.println( io.getMessage() );
 		}catch ( JDOMException jdomex ) {

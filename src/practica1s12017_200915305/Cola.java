@@ -42,21 +42,26 @@ public  class Cola {
     
     }
     
-    public void SacarCola(){
+    public char SacarCola(){
         NodoCola temporal=primerocola;
         NodoCola actual= temporal;
+        NodoCola aux=primerocola;
+        
+       
       
         while (temporal.sigcola!=null) {            
             actual=temporal;
             temporal=temporal.sigcola;
             
         }
+        System.out.println("Desencolar..."+actual.sigcola.letra);
         actual.sigcola=null;
         contarc--;
     
-        
-        
+     
+        return temporal.letra;
     
     }
     
+      
 }

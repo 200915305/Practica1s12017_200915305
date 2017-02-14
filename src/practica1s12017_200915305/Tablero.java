@@ -14,16 +14,14 @@ public class Tablero extends javax.swing.JFrame {
     public static  ArrayList<String> listaDobley =new ArrayList<String>();
     public static  ArrayList<String> listaTriplex =new ArrayList<String>();
     public static  ArrayList<String> listaTripley =new ArrayList<String>();
-    public static  ArrayList<String> listaDiccionario =new ArrayList<String>();
+   
     
     
     public Tablero() {
         initComponents();
         System.out.println("DIMENSION......"+dimension);
         
-        for (int i = 0; i < listaDiccionario.size(); i++) {
-            System.out.println("Dic..."+listaDiccionario.get(i));
-        }
+       
        
     }
 
