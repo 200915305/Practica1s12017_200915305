@@ -1,17 +1,19 @@
 
 package practica1s12017_200915305;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import practica1s12017_200915305.Cola;
 
 
 
-/**
- *
- * @author ubuntu
- */
+
 public  class ListaCircular {
+     Graphviz A = new Graphviz();
    public  NodoCircular primeroc;
    public  NodoCircular ultimoc;
    public  NodoCircular temporal=primeroc;
@@ -108,9 +110,8 @@ public  class ListaCircular {
      repetido=0;
      
     }
-
-
- public void ImprimirListaCircular(){
+ 
+  public void ImprimirListaCircular(){
         NodoCircular temporal;
         temporal = primeroc;
         
@@ -130,8 +131,103 @@ public  class ListaCircular {
         }
         
         System.out.println("------------------");
+        GraficarListaCircular();
         
     }
+  
+  public void GraficarListaCircular(){
+        String nodos ="";
+        String nodes ="";
+      try {
+             NodoCircular temporal;
+             temporal = primeroc;
+             
+             NodoCircular temporal2;
+             temporal2 = primeroc;
+             
+             NodoCircular temporal3;
+             temporal3 = primeroc;
+             
+             NodoLista temp;
+             NodoLista temp2;
+             NodoLista temp3;
+             
+             
+             File Arch = new File("Circular.txt");
+             Arch.delete();
+             A.Guardar_Codigo_GRafo(Arch, "digraph G{ \nlabel = \"Diccionario\";\n");
+            
+             int i;
+             int x=0;
+            
+             System.out.println("----Lista Circular--------------");
+             for(i=0;i<contarc;i++){
+                 nodos=nodos+"\"Nodo"+i+"\""+";";
+                 A.Guardar_Codigo_GRafo(Arch, "\nNodo"
+                 +i
+                 + " [shape=box,style=filled,color=\".7 .3 1.0\", label = \"Usuario: "
+                 + temporal.usuario + "\"];\n"); 
+                
+                 temp=temporal.primerol;
+                 while(temp!=null){
+                     
+                     nodes=nodes+"\"Node"+temporal.usuario+x+"\""+";";
+                     A.Guardar_Codigo_GRafo(Arch, "\nNode"
+                     +temporal.usuario
+                     +x
+                     + " [shape=box,color=\"blue\", label = \"Letra: "
+                     + temp.Letra + "\"];\n"); 
+                    
+                     temp=temp.sig;
+                     x++;
+                 }
+                 temporal=temporal.sig;
+                 x=0;
+             }
+             
+                 for(i=0;i<contarc;i++){
+                   int a =i+1;
+                     A.Guardar_Codigo_GRafo(Arch, "\nNodo" +i);
+                     if (a!=contarc) {
+                        A.Guardar_Codigo_GRafo(Arch, " -> Nodo"+a+";\n"); 
+                     } else {
+                          A.Guardar_Codigo_GRafo(Arch, " -> Nodo"+0+";\n");
+                     }
+             
+                
+                 temp2=temporal2.primerol;
+                 while(temp2!=null){
+                   int b =x+1;
+                   A.Guardar_Codigo_GRafo(Arch, "\nNode" +temporal2.usuario+x 
+                   +" -> Node"+temporal2.usuario+b+";\n");
+                    
+                     temp2=temp2.sig;
+                     x++;
+                 }
+                 temporal2=temporal2.sig;
+                 x=0;
+             }
+                 
+                 for (int j = 0; j <contarc; j++) {
+                    
+                     A.Guardar_Codigo_GRafo(Arch, "\nNodo" +j); 
+                     temp3=temporal3.primerol;
+                     A.Guardar_Codigo_GRafo(Arch, " -> Node"+temporal3.usuario+0+";\n");
+                     temporal3=temporal3.sig;
+                }
+             
+                  A.Guardar_Codigo_GRafo(Arch, "{ rank = same;"+nodos+nodes+"}");
+                  A.Guardar_Codigo_GRafo(Arch, "}\n");
+             
+             
+             
+             System.out.println("------------------");
+         } catch (IOException ex) {
+             Logger.getLogger(ListaCircular.class.getName()).log(Level.SEVERE, null, ex);
+         }
+        A.Generar_Imagen_automata("C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe", "Circular.txt", "Circular.jpg");
+    
+  }
    
    
 }

@@ -16,7 +16,7 @@ public class Practica1s12017_200915305 {
         llamar.setVisible(true);
       //  LeerXml xml = new LeerXml();
        // xml.cargarXml();
-       // letras.Letras();
+        letras.Letras();
        
        Xml xml = new Xml();
       // xml.cargarXml();

@@ -1,0 +1,99 @@
+digraph G{ 
+label = "Diccionario";
+
+Nodo0 [shape=box,color="blue", label = "Palabra: UNO"];
+
+NodeUNO0 [shape=box,color="blue", label = "Palabra: T"];
+
+NodeUNO0 [shape=box,color="blue", label = "Palabra: D"];
+
+NodeUNO0 [shape=box,color="blue", label = "Palabra: C"];
+
+NodeUNO0 [shape=box,color="blue", label = "Palabra: A"];
+
+NodeUNO0 [shape=box,color="blue", label = "Palabra: G"];
+
+NodeUNO0 [shape=box,color="blue", label = "Palabra: C"];
+
+NodeUNO0 [shape=box,color="blue", label = "Palabra: D"];
+
+Nodo1 [shape=box,color="blue", label = "Palabra: DOS"];
+
+NodeDOS1 [shape=box,color="blue", label = "Palabra: O"];
+
+NodeDOS1 [shape=box,color="blue", label = "Palabra: I"];
+
+NodeDOS1 [shape=box,color="blue", label = "Palabra: S"];
+
+NodeDOS1 [shape=box,color="blue", label = "Palabra: I"];
+
+NodeDOS1 [shape=box,color="blue", label = "Palabra: E"];
+
+NodeDOS1 [shape=box,color="blue", label = "Palabra: B"];
+
+NodeDOS1 [shape=box,color="blue", label = "Palabra: N"];
+
+Nodo2 [shape=box,color="blue", label = "Palabra: TRES"];
+
+NodeTRES2 [shape=box,color="blue", label = "Palabra: L"];
+
+NodeTRES2 [shape=box,color="blue", label = "Palabra: H"];
+
+NodeTRES2 [shape=box,color="blue", label = "Palabra: N"];
+
+NodeTRES2 [shape=box,color="blue", label = "Palabra: A"];
+
+NodeTRES2 [shape=box,color="blue", label = "Palabra: I"];
+
+NodeTRES2 [shape=box,color="blue", label = "Palabra: U"];
+
+NodeTRES2 [shape=box,color="blue", label = "Palabra: E"];
+
+Nodo0 -> Nodo1;
+
+NodoUNO0 -> NodoUNO1;
+
+NodoUNO0 -> NodoUNO1;
+
+NodoUNO0 -> NodoUNO1;
+
+NodoUNO0 -> NodoUNO1;
+
+NodoUNO0 -> NodoUNO1;
+
+NodoUNO0 -> NodoUNO1;
+
+NodoUNO0 -> NodoUNO1;
+
+Nodo1 -> Nodo2;
+
+NodoDOS1 -> NodoDOS2;
+
+NodoDOS1 -> NodoDOS2;
+
+NodoDOS1 -> NodoDOS2;
+
+NodoDOS1 -> NodoDOS2;
+
+NodoDOS1 -> NodoDOS2;
+
+NodoDOS1 -> NodoDOS2;
+
+NodoDOS1 -> NodoDOS2;
+
+Nodo2 -> Nodo3;
+
+NodoTRES2 -> NodoTRES3;
+
+NodoTRES2 -> NodoTRES3;
+
+NodoTRES2 -> NodoTRES3;
+
+NodoTRES2 -> NodoTRES3;
+
+NodoTRES2 -> NodoTRES3;
+
+NodoTRES2 -> NodoTRES3;
+
+NodoTRES2 -> NodoTRES3;
+{ rank = same;"Nodo0";"Nodo1";"Nodo2";"NodeUNO0";"NodeUNO0";"NodeUNO0";"NodeUNO0";"NodeUNO0";"NodeUNO0";"NodeUNO0";"NodeDOS1";"NodeDOS1";"NodeDOS1";"NodeDOS1";"NodeDOS1";"NodeDOS1";"NodeDOS1";"NodeTRES2";"NodeTRES2";"NodeTRES2";"NodeTRES2";"NodeTRES2";"NodeTRES2";"NodeTRES2";}}

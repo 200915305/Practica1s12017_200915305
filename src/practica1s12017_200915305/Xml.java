@@ -11,8 +11,8 @@ import org.jdom.input.SAXBuilder;
 
 public class Xml {
     
-    ListaDiccionario diccionario =new ListaDiccionario();
-   public static Panel panel = new Panel();
+   public static ListaDiccionario diccionario =new ListaDiccionario();
+  // public static Panel panel = new Panel();
    public Xml(){
    
    }
