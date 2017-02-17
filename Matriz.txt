@@ -1,0 +1,234 @@
+digraph G{ 
+label = "Matriz de Juego";
+1 [shape=box,color="white", label = ""];
+2 [shape=box,color="white", label = ""];
+3 [shape=box,color="white", label = ""];
+4 [shape=box,color="white", label = ""];
+5 [shape=box,color="white", label = ""];
+6 [shape=box,color="white", label = ""];
+7 [shape=box,color="white", label = ""];
+8 [shape=box,color="white", label = ""];
+9 [shape=box,color="white", label = ""];
+10 [shape=box,color="white", label = ""];
+11 [shape=box,color="white", label = ""];
+12 [shape=box,color="white", label = ""];
+13 [shape=box,color="white", label = ""];
+14 [shape=box,color="white", label = ""];
+15 [shape=box,color="white", label = ""];
+16 [shape=box,color="white", label = ""];
+17 [shape=box,color="white", label = ""];
+18 [shape=box,color="white", label = ""];
+19 [shape=box,color="white", label = ""];
+20 [shape=box,color="white", label = ""];
+
+Nodo1 [shape=box,color="blue", label = "null
+1"];
+Nodo2 [shape=box,color="blue", label = "null
+2"];
+Nodo3 [shape=box,color="blue", label = "null
+3"];
+Nodo4 [shape=box,color="blue", label = "null
+4"];
+Nodo5 [shape=box,color="blue", label = "null
+5"];
+Nodo6 [shape=box,color="blue", label = "null
+6"];
+Nodo7 [shape=box,color="blue", label = "null
+7"];
+Nodo8 [shape=box,color="blue", label = "null
+8"];
+Nodo9 [shape=box,color="blue", label = "null
+9"];
+Nodo10 [shape=box,color="blue", label = "null
+10"];
+Nodo11 [shape=box,color="blue", label = "null
+11"];
+Nodo12 [shape=box,color="blue", label = "null
+12"];
+Nodo13 [shape=box,color="blue", label = "null
+13"];
+Nodo14 [shape=box,color="blue", label = "null
+14"];
+Nodo15 [shape=box,color="blue", label = "null
+15"];
+Nodo16 [shape=box,color="blue", label = "null
+16"];
+Nodo17 [shape=box,color="blue", label = "null
+17"];
+Nodo18 [shape=box,color="blue", label = "null
+18"];
+Nodo19 [shape=box,color="blue", label = "null
+19"];
+Nodo20 [shape=box,color="blue", label = "null
+20"];
+Nodo21 [shape=box,color="blue", label = "null
+21"];
+Nodo22 [shape=box,color="blue", label = "null
+22"];
+Nodo23 [shape=box,color="blue", label = "null
+23"];
+Nodo24 [shape=box,color="blue", label = "null
+24"];
+Nodo25 [shape=box,color="blue", label = "null
+25"];
+
+{rank = same;"1";"2";"3";"4";"5";}
+{rank = same;"6";"Nodo1";"Nodo2";"Nodo3";"Nodo4";"Nodo5";"7";}
+{rank = same;"8";"Nodo6";"Nodo7";"Nodo8";"Nodo9";"Nodo10";"9";}
+{rank = same;"10";"Nodo11";"Nodo12";"Nodo13";"Nodo14";"Nodo15";"11";}
+{rank = same;"12";"Nodo16";"Nodo17";"Nodo18";"Nodo19";"Nodo20";"13";}
+{rank = same;"14";"Nodo21";"Nodo22";"Nodo23";"Nodo24";"Nodo25";"15";}
+{rank = same;"16";"17";"18";"19";"20";}
+
+Nodo1-> Nodo2;
+Nodo2-> Nodo1;
+Nodo1-> Nodo6;
+Nodo6-> Nodo1;
+
+Nodo2-> Nodo3;
+Nodo3-> Nodo2;
+Nodo2-> Nodo7;
+Nodo7-> Nodo2;
+
+Nodo3-> Nodo4;
+Nodo4-> Nodo3;
+Nodo3-> Nodo8;
+Nodo8-> Nodo3;
+
+Nodo4-> Nodo5;
+Nodo5-> Nodo4;
+Nodo4-> Nodo9;
+Nodo9-> Nodo4;
+
+Nodo5-> Nodo10;
+Nodo10-> Nodo5;
+
+Nodo6-> Nodo7;
+Nodo7-> Nodo6;
+Nodo6-> Nodo11;
+Nodo11-> Nodo6;
+
+Nodo7-> Nodo8;
+Nodo8-> Nodo7;
+Nodo7-> Nodo12;
+Nodo12-> Nodo7;
+
+Nodo8-> Nodo9;
+Nodo9-> Nodo8;
+Nodo8-> Nodo13;
+Nodo13-> Nodo8;
+
+Nodo9-> Nodo10;
+Nodo10-> Nodo9;
+Nodo9-> Nodo14;
+Nodo14-> Nodo9;
+
+Nodo10-> Nodo15;
+Nodo15-> Nodo10;
+
+Nodo11-> Nodo12;
+Nodo12-> Nodo11;
+Nodo11-> Nodo16;
+Nodo16-> Nodo11;
+
+Nodo12-> Nodo13;
+Nodo13-> Nodo12;
+Nodo12-> Nodo17;
+Nodo17-> Nodo12;
+
+Nodo13-> Nodo14;
+Nodo14-> Nodo13;
+Nodo13-> Nodo18;
+Nodo18-> Nodo13;
+
+Nodo14-> Nodo15;
+Nodo15-> Nodo14;
+Nodo14-> Nodo19;
+Nodo19-> Nodo14;
+
+Nodo15-> Nodo20;
+Nodo20-> Nodo15;
+
+Nodo16-> Nodo17;
+Nodo17-> Nodo16;
+Nodo16-> Nodo21;
+Nodo21-> Nodo16;
+
+Nodo17-> Nodo18;
+Nodo18-> Nodo17;
+Nodo17-> Nodo22;
+Nodo22-> Nodo17;
+
+Nodo18-> Nodo19;
+Nodo19-> Nodo18;
+Nodo18-> Nodo23;
+Nodo23-> Nodo18;
+
+Nodo19-> Nodo20;
+Nodo20-> Nodo19;
+Nodo19-> Nodo24;
+Nodo24-> Nodo19;
+
+Nodo20-> Nodo25;
+Nodo25-> Nodo20;
+
+Nodo21-> Nodo22;
+Nodo22-> Nodo21;
+
+Nodo22-> Nodo23;
+Nodo23-> Nodo22;
+Nodo23-> Nodo24;
+Nodo24-> Nodo23;
+Nodo24-> Nodo25;
+Nodo25-> Nodo24;
+1->Nodo1[color = red];
+Nodo1->1;
+2->Nodo2[color = red];
+Nodo2->2;
+3->Nodo3[color = red];
+Nodo3->3;
+4->Nodo4[color = red];
+Nodo4->4;
+5->Nodo5[color = red];
+Nodo5->5;
+7->Nodo5[color = red];
+Nodo5->7;
+7->9[color = red];
+9->Nodo10[color = red];
+Nodo10->9;
+9->11[color = red];
+11->Nodo15[color = red];
+Nodo15->11;
+11->13[color = red];
+13->Nodo20[color = red];
+Nodo20->13;
+13->15[color = red];
+15->Nodo25[color = red];
+Nodo25->15;
+1->6[color = red];
+6->Nodo1[color = red];
+Nodo1->6;
+6->8[color = red];
+8->Nodo6[color = red];
+Nodo6->8;
+8->10[color = red];
+10->Nodo11[color = red];
+Nodo11->10;
+10->12[color = red];
+12->Nodo16[color = red];
+Nodo16->12;
+12->14[color = red];
+14->Nodo21[color = red];
+Nodo21->14;
+16->Nodo21[color = red];
+Nodo21->16;
+17->Nodo22[color = red];
+Nodo22->17;
+18->Nodo23[color = red];
+Nodo23->18;
+19->Nodo24[color = red];
+Nodo24->19;
+20->Nodo25[color = red];
+Nodo25->20;
+
+}

@@ -1,0 +1,35 @@
+digraph G{ 
+label = "Usuario";
+
+Nodo2 [shape=box,style=filled,color=".7 .3 1.0", label = "Usuario: tres"];
+
+Nodetres0 [shape=box,color="blue", label = "Letra: G"];
+
+Nodetres1 [shape=box,color="blue", label = "Letra: M"];
+
+Nodetres2 [shape=box,color="blue", label = "Letra: I"];
+
+Nodetres3 [shape=box,color="blue", label = "Letra: E"];
+
+Nodetres4 [shape=box,color="blue", label = "Letra: U"];
+
+Nodetres5 [shape=box,color="blue", label = "Letra: O"];
+
+Nodetres6 [shape=box,color="blue", label = "Letra: A"];
+
+Nodo2 -> Nodetres0;
+
+Nodetres0 -> Nodetres1;
+
+Nodetres1 -> Nodetres2;
+
+Nodetres2 -> Nodetres3;
+
+Nodetres3 -> Nodetres4;
+
+Nodetres4 -> Nodetres5;
+
+Nodetres5 -> Nodetres6;
+
+Nodetres6 -> Nodetres7;
+{ rank = same;"Nodo2";"Nodetres0";"Nodetres1";"Nodetres2";"Nodetres3";"Nodetres4";"Nodetres5";"Nodetres6";}}

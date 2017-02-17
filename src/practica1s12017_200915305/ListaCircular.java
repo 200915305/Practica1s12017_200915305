@@ -155,7 +155,7 @@ public  class ListaCircular {
              
              File Arch = new File("Circular.txt");
              Arch.delete();
-             A.Guardar_Codigo_GRafo(Arch, "digraph G{ \nlabel = \"Diccionario\";\n");
+             A.Guardar_Codigo_GRafo(Arch, "digraph G{ \nlabel = \"Lista Circular\";\n");
             
              int i;
              int x=0;
@@ -229,5 +229,91 @@ public  class ListaCircular {
     
   }
    
+  public void ImprimirUsuario(String Usuario){
+      String nodos ="";
+      String nodes ="";
+      
+         try {
+             NodoCircular temporal;
+             temporal = primeroc;  
+             NodoCircular temporal2;
+             temporal2 = primeroc;  
+             NodoLista temp;
+             NodoLista temp2;
+             File Arch = new File("Usuario.txt");
+             Arch.delete();
+             A.Guardar_Codigo_GRafo(Arch, "digraph G{ \nlabel = \"Usuario\";\n");
+             int i;
+             System.out.println("----Lista Circular--------------"+Usuario);
+             for(i=0;i<contarc;i++){
+                 if(temporal.usuario.equals(Usuario)){                     
+                     System.out.println("Si Existe");
+                      
+                 nodos=nodos+"\"Nodo"+i+"\""+";";
+                 A.Guardar_Codigo_GRafo(Arch, "\nNodo"
+                 +i
+                 + " [shape=box,style=filled,color=\".7 .3 1.0\", label = \"Usuario: "
+                 + temporal.usuario + "\"];\n"); 
+                
+                 temp=temporal.primerol;
+                 int x=0;
+                 while(temp!=null){
+                     
+                     nodes=nodes+"\"Node"+temporal.usuario+x+"\""+";";
+                     A.Guardar_Codigo_GRafo(Arch, "\nNode"
+                     +temporal.usuario
+                     +x
+                     + " [shape=box,color=\"blue\", label = \"Letra: "
+                     + temp.Letra + "\"];\n");                   
+                     temp=temp.sig;
+                     x++;
+               
+                 }
+                 temporal=temporal.sig;
+                 x=0;   
+                     
+                 }else{
+                     System.out.println("El Usuario no existe");
+                     temporal=temporal.sig;
+                 }
+                
+             }
+             
+             for(i=0;i<contarc;i++){
+                 if(temporal2.usuario.equals(Usuario)){                     
+                     System.out.println("Si Existe");
+                      
+                   A.Guardar_Codigo_GRafo(Arch, "\nNodo" +i 
+                   +" -> Node"+temporal2.usuario+0+";\n");
+                 int x=0;
+                 temp2=temporal2.primerol;
+                 while(temp2!=null){
+                    int b=x+1;
+                    A.Guardar_Codigo_GRafo(Arch, "\nNode" +temporal2.usuario+x
+                   +" -> Node"+temporal2.usuario+b+";\n");
+                  temp2=temp2.sig;
+                  x++;
+                 }
+                 temporal2=temporal2.sig;
+                 x=0;   
+                     
+                 }else{
+                     System.out.println("El Usuario no existe");
+                     temporal2=temporal2.sig;
+                 }
+                
+             }
+             
+                  A.Guardar_Codigo_GRafo(Arch, "{ rank = same;"+nodos+nodes+"}");
+                  A.Guardar_Codigo_GRafo(Arch, "}\n");
+                  
+             System.out.println("------------------");
+             GraficarListaCircular();
+         } catch (IOException ex) {
+             Logger.getLogger(ListaCircular.class.getName()).log(Level.SEVERE, null, ex);
+         }
+
+         A.Generar_Imagen_automata("C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe", "Usuario.txt", "Usuario.jpg");
+  }
    
 }
