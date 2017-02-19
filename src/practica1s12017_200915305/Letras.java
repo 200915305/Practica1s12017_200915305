@@ -129,12 +129,12 @@ for(int k=0; k<cantidad; k++){
     
     int a = arreglo[k];
     String b = lista.get(a);
-    char c[]=b.toCharArray();
     
-    cola.AgregarCola(c[0]);
+    
+    cola.AgregarCola(b);
     
 }
-        
+        cola.GraficarCola();
         
     }
     

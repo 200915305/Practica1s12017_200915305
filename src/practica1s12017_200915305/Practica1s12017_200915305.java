@@ -8,6 +8,7 @@ package practica1s12017_200915305;
 public class Practica1s12017_200915305 {
 
     public static Letras letras =new Letras();
+    Cola cola =new Cola();
   
     
     public static void main(String[] args) {
@@ -17,6 +18,8 @@ public class Practica1s12017_200915305 {
       //  LeerXml xml = new LeerXml();
        // xml.cargarXml();
         letras.Letras();
+        
+        
        
        Xml xml = new Xml();
       // xml.cargarXml();

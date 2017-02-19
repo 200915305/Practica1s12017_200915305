@@ -14,19 +14,20 @@ import practica1s12017_200915305.Cola;
 
 public  class ListaCircular {
      Graphviz A = new Graphviz();
-   public  NodoCircular primeroc;
-   public  NodoCircular ultimoc;
-   public  NodoCircular temporal=primeroc;
+     
+   public static  NodoCircular primeroc;
+   public static  NodoCircular ultimoc;
+   public static  NodoCircular temporal=primeroc;
 
-  public  Cola cola =new Cola();
+  public static Cola cola =new Cola();
  
-    int contarc;
+   public static int contarc;
     int dato=0;
-    int repetido=0;
+   public static  int repetido=0;
     int NoRepetido=0;
   
     
- public  void AgregarListaCircular(String usuario){
+ public static String AgregarListaCircular(String usuario){
       NodoCircular nuevoc=new NodoCircular(usuario);
       NodoCircular temp=primeroc;
       
@@ -40,14 +41,14 @@ public  class ListaCircular {
           primeroc=nuevoc;
           ultimoc=nuevoc;
           
-                       char a = cola.SacarCola();
+                       String a = cola.SacarCola();
                        NodoLista nuevol=new NodoLista(a);
                        ultimoc.primerol=nuevol;
                        ultimoc.ultimol=nuevol;
                        
                        for(int i=0;i<6;i++){
                            
-                           char b = cola.SacarCola();
+                           String b = cola.SacarCola();
                            NodoLista nuevol2=new NodoLista(b);
          
                           
@@ -82,13 +83,13 @@ public  class ListaCircular {
           if (repetido==0) {
               ultimoc.sig=nuevoc;
           ultimoc=nuevoc;
-                       char c = cola.SacarCola();
+                       String c = cola.SacarCola();
                          NodoLista nuevol3=new NodoLista(c);   
                          ultimoc.primerol=nuevol3;
                          ultimoc.ultimol=nuevol3;
                          
                       for(int i=0;i<6;i++){
-                         char d = cola.SacarCola();
+                         String d = cola.SacarCola();
                          NodoLista nuevol4=new NodoLista(d); 
                        
                            
@@ -108,11 +109,11 @@ public  class ListaCircular {
       }
       
      repetido=0;
-     
+     return usuario;
     }
  
   public void ImprimirListaCircular(){
-        NodoCircular temporal;
+     NodoCircular temporal;
         temporal = primeroc;
         
         NodoLista temp;
@@ -131,7 +132,7 @@ public  class ListaCircular {
         }
         
         System.out.println("------------------");
-        GraficarListaCircular();
+        GraficarListaCircular();   
         
     }
   

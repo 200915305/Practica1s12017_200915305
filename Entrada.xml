@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<scrabble>
+
+	<dimension>20</dimension>
+
+	<dobles>
+
+		<casilla>
+
+			<x>2</x>
+
+			<y>5</y>
+
+		</casilla>
+
+		<casilla>
+
+			<x>5</x>
+
+			<y>5</y>
+
+		</casilla>
+
+		<casilla>
+
+			<x>12</x>
+
+			<y>15</y>
+
+		</casilla>
+
+		<casilla>
+
+			<x>7</x>
+
+			<y>9</y>
+
+		</casilla>
+
+
+	</dobles>
+
+	<triples>
+
+		<casilla>
+
+			<x>20</x>
+
+			<y>20</y>
+
+		</casilla>
+
+
+		<casilla>
+
+			<x>10</x>
+
+			<y>10</y>
+
+		</casilla>
+
+
+		<casilla>
+
+			<x>2</x>
+
+			<y>2</y>
+
+		</casilla>
+
+		<casilla>
+
+			<x>1</x>
+
+			<y>1</y>
+
+		</casilla>
+
+                <casilla>
+
+			<x>13</x>
+
+			<y>13</y>
+
+		</casilla>
+
+	</triples>
+
+        <diccionario>
+
+                <palabra>hola</palabra>
+
+		<palabra>mundo</palabra>
+
+		<palabra>como</palabra>
+
+		<palabra>estas</palabra>
+
+		<palabra>uno</palabra>
+
+		<palabra>dos</palabra>
+
+		<palabra>tres</palabra>
+
+		<palabra>universidad</palabra>
+
+		<palabra>practica</palabra>
+
+		<palabra>primera</palabra>
+
+		<palabra>correo</palabra>
+
+		<palabra>juego</palabra>
+
+        </diccionario>
+     
+
+</scrabble>

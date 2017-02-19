@@ -1,4 +1,3 @@
-
 package practica1s12017_200915305;
 
 import java.awt.Color;
@@ -7,45 +6,54 @@ import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.io.File;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import static practica1s12017_200915305.ListaCircular.contarc;
+import static practica1s12017_200915305.ListaCircular.primeroc;
 
 /**
  *
  * @author ubuntu
  */
 public class Tablero extends javax.swing.JFrame {
+
     Matriz matriz = new Matriz();
-    int contador_ID =1;
-    public static String dimension ="";
-    public static  ArrayList<String> listaDoblex =new ArrayList<String>();
-    public static  ArrayList<String> listaDobley =new ArrayList<String>();
-    public static  ArrayList<String> listaTriplex =new ArrayList<String>();
-    public static  ArrayList<String> listaTripley =new ArrayList<String>();
-     int longitud = 0;
-    int longitud1 = 0;
-    int contador_filas = 5;
-    int contador_columnas = 5;
+    ListaCircular listaCircular = new ListaCircular();
+    Lista lista = new Lista();
+    public  NodoCircular primeroc;
+
+   
+    int contador_ID = 1;
+    public static int dimension;
+    public static ArrayList<String> listaDoblex = new ArrayList<String>();
+    public static ArrayList<String> listaDobley = new ArrayList<String>();
+    public static ArrayList<String> listaTriplex = new ArrayList<String>();
+    public static ArrayList<String> listaTripley = new ArrayList<String>();
+    int longitud = 0;
+    int longitud1 = 7;
+    int contador_filas = dimension;
+    int contador_columnas = dimension;
     int donde = 0;
     int conta_celdas;
     int conta_columnas;
     String objeto_seleccionado = "";
-    
-    
-    
+
     public Tablero() {
         initComponents();
-        System.out.println("DIMENSION......"+dimension);
+        System.out.println("DIMENSION......" + dimension);
         llenar_matriz(contador_columnas, contador_filas, "null");
-        crear_pane_principal(contador_filas,contador_columnas);
-       
-       
+        AgregarDoblesyTriples();
+        crear_pane_principal(contador_filas, contador_columnas);
+        CrearObjetos();
+
     }
-    
-  public void llenar_matriz(int largo, int ancho, String contenido) {
+
+    public void llenar_matriz(int largo, int ancho, String contenido) {
         matriz.sampar_matriz(contenido, contador_ID, 0);
         contador_ID++;
         for (int i = 0; i < largo - 1; i++) {
@@ -63,19 +71,44 @@ public class Tablero extends javax.swing.JFrame {
         System.out.println("Imprimiendo Matriz desde llenar la matriz\n");
         matriz.GraficarMatriz();
     }
-    
- public void crear_pane_principal(int fila, int columna) {
+
+    public void AgregarDoblesyTriples() {
+        int x = 0;
+        int y = 0;
+        int posicion = 0;
+
+        for (int i = 0; i < listaDoblex.size(); i++) {
+            x = Integer.parseInt(listaDoblex.get(i));
+            y = Integer.parseInt(listaDobley.get(i));
+            posicion = 1 + (y - 1) * (dimension) + (x - 1);
+
+            matriz.modificar(posicion, "DOBLE");
+
+        }
+
+        for (int i = 0; i < listaTriplex.size(); i++) {
+            x = Integer.parseInt(listaTriplex.get(i));
+            y = Integer.parseInt(listaTripley.get(i));
+            posicion = 1 + (y - 1) * (dimension) + (x - 1);
+
+            matriz.modificar(posicion, "TRIPLE");
+
+        }
+
+        matriz.GraficarMatriz();
+    }
+
+    public void crear_pane_principal(int fila, int columna) {
 
         int tamaño_fila;
         int tamaño_columna;
-      
-        
+
         NodoMatriz temp1 = this.matriz.raiz;
-     
+
         longitud = columna;
 
-        int largo =70 * columna;
-        int ancho = 70 * fila;
+        int largo = 50 * columna;
+        int ancho = 50 * fila;
 
         this.jPanel6.removeAll();
         this.jPanel6.setBorder(BorderFactory.createLineBorder(Color.BLUE));
@@ -107,7 +140,7 @@ public class Tablero extends javax.swing.JFrame {
                     label[Contador_celdas].repaint();
                 } else {
                     ImageIcon img = new ImageIcon(cual_objeto(temp1.objeto));
-                    Icon icono = new ImageIcon(img.getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
+                    Icon icono = new ImageIcon(img.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
                     label[Contador_celdas].removeAll();
                     label[Contador_celdas].setIcon(icono);
                     label[Contador_celdas].repaint();
@@ -128,13 +161,13 @@ public class Tablero extends javax.swing.JFrame {
                                     conta_celdas = i;
                                     //JOptionPane.showMessageDialog(null, "Contador celdas: " + conta_celdas);
                                     ImageIcon img = new ImageIcon(cual_objeto(objeto_seleccionado));
-                                    Icon icono = new ImageIcon(img.getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
+                                    Icon icono = new ImageIcon(img.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
                                     label[donde].removeAll();
                                     label[donde].setIcon(icono);
                                     label[donde].repaint();
                                     label[donde].setIcon(icono);
                                     matriz.modificar(conta_celdas, objeto_seleccionado);
-                                    matriz.imprimir_matriz();
+                                    //  matriz.imprimir_matriz();
                                     objeto_seleccionado = "";
                                 }
                             }
@@ -184,7 +217,7 @@ public class Tablero extends javax.swing.JFrame {
                             label[columnas].repaint();
                         } else {
                             ImageIcon img1 = new ImageIcon(cual_objeto(tempo.objeto));
-                            Icon icono1 = new ImageIcon(img1.getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
+                            Icon icono1 = new ImageIcon(img1.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
                             label[columnas].removeAll();
                             label[columnas].setIcon(icono1);
                             label[columnas].repaint();
@@ -206,13 +239,13 @@ public class Tablero extends javax.swing.JFrame {
                                             conta_celdas = i;
                                             //JOptionPane.showMessageDialog(null, "Contador celdas: " + conta_celdas + " Contador columnas: " + conta_columnas);
                                             ImageIcon img = new ImageIcon(cual_objeto(objeto_seleccionado));
-                                            Icon icono = new ImageIcon(img.getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
+                                            Icon icono = new ImageIcon(img.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
                                             label[donde].removeAll();
                                             label[donde].setIcon(icono);
                                             label[donde].repaint();
                                             label[donde].setIcon(icono);
                                             matriz.modificar(conta_celdas, objeto_seleccionado);
-                                            matriz.imprimir_matriz();
+                                            //  matriz.imprimir_matriz();
                                             objeto_seleccionado = "";
                                         }
                                     }
@@ -253,30 +286,228 @@ public class Tablero extends javax.swing.JFrame {
             Contador_celdas = Contador_celdas + No_columnas - 1;
         }
     }
-    
-        public String cual_objeto(String ob) {
-        if (ob.equals("Pared")) {
-            return "C:\\Users\\Administrador\\Desktop\\Practica1s22015_200915305\\src\\practica1s22015_200915305\\Imagenes\\Pared.png";
-        } else if (ob.equals("Suelo")) {
-            return "C:\\Users\\Administrador\\Desktop\\Practica1s22015_200915305\\src\\practica1s22015_200915305\\Imagenes\\Suelo.png";
-        } else if (ob.equals("Goomba")) {
-            return "C:\\Users\\Administrador\\Desktop\\Practica1s22015_200915305\\src\\practica1s22015_200915305\\Imagenes\\Goomba.png";
-        } else if (ob.equals("Mario")) {
-            return "C:\\Users\\Administrador\\Desktop\\Practica1s22015_200915305\\src\\practica1s22015_200915305\\Imagenes\\Mario.png";
-        } else if (ob.equals("Koopa")) {
-            return "C:\\Users\\Administrador\\Desktop\\Practica1s22015_200915305\\src\\practica1s22015_200915305\\Imagenes\\Koopa.png";
-        } else if (ob.equals("Ficha")) {
-            return "C:\\Users\\Administrador\\Desktop\\Practica1s22015_200915305\\src\\practica1s22015_200915305\\Imagenes\\Ficha.png";
-        } else if (ob.equals("Vida")) {
-            return "C:\\Users\\Administrador\\Desktop\\Practica1s22015_200915305\\src\\practica1s22015_200915305\\Imagenes\\Vida.png";
-        } else if (ob.equals("Castillo")) {
-            return "C:\\Users\\Administrador\\Desktop\\Practica1s22015_200915305\\src\\practica1s22015_200915305\\Imagenes\\Castillo.png";
+
+    public void CrearObjetos() {
+        {
+            NodoCircular temporal=practica1s12017_200915305.ListaCircular.primeroc;
+            NodoLista temp;
+            temp = temporal.primerol;
+
+            int tamaño_fila;
+            int tamaño_columna;
+
+            int largo = 70 * longitud1;
+            int ancho = 200;
+
+            this.jPanel1.removeAll();
+            this.jPanel1.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+
+            int No_filas = 3;//Integer.parseInt(this.jTextField1.getText());
+            int No_columnas = longitud1;//Integer.parseInt(this.jTextField2.getText());
+
+            int altura_pane_Matriz = ancho;//this.Pane_objetos.getSize().height;
+            int ancho_pane_Matriz = largo;//this.Pane_objetos.getSize().width;
+
+            if (longitud1 == 0) {
+                tamaño_fila = 1 / 1;
+                tamaño_columna = altura_pane_Matriz / No_filas;
+            } else {
+                tamaño_fila = ancho_pane_Matriz / No_columnas;
+                tamaño_columna = altura_pane_Matriz / No_filas;
+            }
+            int contador_Lista = (No_filas * No_columnas);
+            javax.swing.JLabel[] label = new javax.swing.JLabel[contador_Lista];
+
+            int columnas;
+            int multiplicador_filas = 0;
+
+            for (int Contador_celdas = 0; Contador_celdas < contador_Lista; Contador_celdas++) {
+                if (temp != null) {
+                    label[Contador_celdas] = new javax.swing.JLabel();
+                    label[Contador_celdas].setBounds((tamaño_fila * 0), (tamaño_columna * multiplicador_filas), tamaño_fila, tamaño_columna);
+                    label[Contador_celdas].setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                    label[Contador_celdas].setBorder(BorderFactory.createLineBorder(Color.BLUE));
+                    ImageIcon img = new ImageIcon(cual_objeto(temp.Letra));
+                    Icon icono = new ImageIcon(img.getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
+                    label[Contador_celdas].removeAll();
+                    label[Contador_celdas].setIcon(icono);
+                    label[Contador_celdas].repaint();
+                    label[Contador_celdas].setIcon(icono);
+                    label[Contador_celdas].setText("" + (Contador_celdas + 1));
+                    label[Contador_celdas].addMouseMotionListener(new MouseMotionListener() {
+
+                        @Override
+                        public void mouseDragged(MouseEvent me) {
+                        }
+
+                        @Override
+                        public void mouseMoved(MouseEvent me) {
+                            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                        }
+                    });
+
+                    label[Contador_celdas].addMouseListener(new MouseListener() {
+
+                        @Override
+                        public void mouseClicked(MouseEvent me) {
+                       //  temp=temporal.primerol;
+                            // objeto_seleccionado = temp.Letra;
+                            //  carga_objetos.ListadeObjetos.EliminarListaDoble(carga_objetos.ListadeObjetos, 0);
+                            CrearObjetos();
+                        //Crear_Juego CJ = new Crear_Juego();
+                            //cerrar();
+                            //CJ.setVisible(true);
+                            //actualizar();
+                            //JOptionPane.showMessageDialog(null, objeto_seleccionado);
+                            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                        }
+
+                        @Override
+                        public void mousePressed(MouseEvent me) {
+                            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                        }
+
+                        @Override
+                        public void mouseReleased(MouseEvent me) {
+                            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                        }
+
+                        @Override
+                        public void mouseEntered(MouseEvent me) {
+                            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                        }
+
+                        @Override
+                        public void mouseExited(MouseEvent me) {
+                            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                        }
+                    });
+
+                    this.jPanel1.add(label[Contador_celdas], null);
+
+                    int columna_temp = 1;
+                    temp = temp.sig;
+
+                    for (columnas = Contador_celdas + 1; columnas < Contador_celdas + No_columnas; columnas++) {
+                        if (temp != null) {
+                            label[columnas] = new javax.swing.JLabel();
+                            label[columnas].setBounds(tamaño_fila * columna_temp, (tamaño_columna * multiplicador_filas), tamaño_fila, tamaño_columna);
+                            label[columnas].setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                            label[columnas].setBorder(BorderFactory.createLineBorder(Color.BLUE));
+                            ImageIcon img1 = new ImageIcon(cual_objeto(temp.Letra));
+                            Icon icono1 = new ImageIcon(img1.getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
+                            label[columnas].removeAll();
+                            label[columnas].setIcon(icono1);
+                            label[columnas].repaint();
+                            label[columnas].setIcon(icono1);
+                            label[columnas].setText("" + (columnas + 1));
+
+                            this.jPanel1.add(label[columnas], null);
+
+                            columna_temp++;
+                            temp = temp.sig;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    public String cual_objeto(String ob) {
+        File Triple = new File("src\\practica1s12017_200915305\\Imagenes\\Triple.png");
+        File Doble = new File("src\\practica1s12017_200915305\\Imagenes\\Doble.png");
+        File A = new File("src\\practica1s12017_200915305\\Imagenes\\A.png");
+        File B = new File("src\\practica1s12017_200915305\\Imagenes\\B.jpg");
+        File C = new File("src\\practica1s12017_200915305\\Imagenes\\C.jpg");
+        File D = new File("src\\practica1s12017_200915305\\Imagenes\\D.png");
+        File E = new File("src\\practica1s12017_200915305\\Imagenes\\E.jpg");
+        File F = new File("src\\practica1s12017_200915305\\Imagenes\\F.png");
+        File G = new File("src\\practica1s12017_200915305\\Imagenes\\G.png");
+        File H = new File("src\\practica1s12017_200915305\\Imagenes\\H.png");
+        File I = new File("src\\practica1s12017_200915305\\Imagenes\\I.png");
+        File J = new File("src\\practica1s12017_200915305\\Imagenes\\J.png");
+        File L = new File("src\\practica1s12017_200915305\\Imagenes\\L.png");
+        File M = new File("src\\practica1s12017_200915305\\Imagenes\\M.png");
+        File N = new File("src\\practica1s12017_200915305\\Imagenes\\N.png");
+        File Ñ = new File("src\\practica1s12017_200915305\\Imagenes\\Ñ.png");
+        File O = new File("src\\practica1s12017_200915305\\Imagenes\\O.png");
+        File P = new File("src\\practica1s12017_200915305\\Imagenes\\P.png");
+        File Q = new File("src\\practica1s12017_200915305\\Imagenes\\Q.png");
+        File R = new File("src\\practica1s12017_200915305\\Imagenes\\R.png");
+        File S = new File("src\\practica1s12017_200915305\\Imagenes\\S.png");
+        File T = new File("src\\practica1s12017_200915305\\Imagenes\\T.png");
+        File U = new File("src\\practica1s12017_200915305\\Imagenes\\U.png");
+        File V = new File("src\\practica1s12017_200915305\\Imagenes\\V.png");
+        File X = new File("src\\practica1s12017_200915305\\Imagenes\\X.png");
+        File Y = new File("src\\practica1s12017_200915305\\Imagenes\\Y.png");
+        File Z = new File("src\\practica1s12017_200915305\\Imagenes\\Z.png");
+
+        if (ob.equals("A")) {
+            return A.toString();
+        } else if (ob.equals("B")) {
+            return B.toString();
+        } else if (ob.equals("C")) {
+            return C.toString();
+        } else if (ob.equals("D")) {
+            return D.toString();
+        } else if (ob.equals("E")) {
+            return E.toString();
+        } else if (ob.equals("F")) {
+            return F.toString();
+        } else if (ob.equals("G")) {
+            return G.toString();
+        } else if (ob.equals("H")) {
+            return H.toString();
+        } else if (ob.equals("I")) {
+            return I.toString();
+        } else if (ob.equals("J")) {
+            return J.toString();
+        } else if (ob.equals("L")) {
+            return L.toString();
+        } else if (ob.equals("M")) {
+            return M.toString();
+        } else if (ob.equals("N")) {
+            return N.toString();
+        } else if (ob.equals("Ñ")) {
+            return Ñ.toString();
+        } else if (ob.equals("O")) {
+            return O.toString();
+        } else if (ob.equals("P")) {
+            return P.toString();
+        } else if (ob.equals("Q")) {
+            return Q.toString();
+        } else if (ob.equals("R")) {
+            return R.toString();
+        } else if (ob.equals("S")) {
+            return S.toString();
+        } else if (ob.equals("T")) {
+            return T.toString();
+        } else if (ob.equals("U")) {
+            return U.toString();
+        } else if (ob.equals("V")) {
+            return V.toString();
+        } else if (ob.equals("X")) {
+            return X.toString();
+        } else if (ob.equals("Y")) {
+            return Y.toString();
+        } else if (ob.equals("Z")) {
+            return Z.toString();
+        } else if (ob.equals("DOBLE")) {
+            return Doble.toString();
+        } else if (ob.equals("TRIPLE")) {
+            return Triple.toString();
         } else {
             return null;
         }
+
+    }
+
     
     
-        }
+    
+    
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -288,80 +519,47 @@ public class Tablero extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jLabel5 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 391, Short.MAX_VALUE)
-        );
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(2000, 2000));
+        jScrollPane1.setViewportView(jLabel1);
 
-        jTabbedPane1.addTab("Lista Diccionario", jPanel1);
+        jTabbedPane1.addTab("Matriz", jScrollPane1);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 391, Short.MAX_VALUE)
-        );
+        jScrollPane4.setPreferredSize(new java.awt.Dimension(2000, 2000));
+        jScrollPane4.setViewportView(jLabel2);
 
-        jTabbedPane1.addTab("Lista Fichas Activas", jPanel2);
+        jTabbedPane1.addTab("Cola de Fichas", jScrollPane4);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 391, Short.MAX_VALUE)
-        );
+        jScrollPane5.setPreferredSize(new java.awt.Dimension(2000, 2000));
+        jScrollPane5.setViewportView(jLabel3);
 
-        jTabbedPane1.addTab("Cola de Fichas ", jPanel3);
+        jTabbedPane1.addTab("Lista Fichas Activas", jScrollPane5);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 391, Short.MAX_VALUE)
-        );
+        jScrollPane6.setPreferredSize(new java.awt.Dimension(2000, 2000));
+        jScrollPane6.setViewportView(jLabel4);
 
-        jTabbedPane1.addTab("Lista de Jugadores", jPanel4);
+        jTabbedPane1.addTab("Lista Diccionario", jScrollPane6);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 391, Short.MAX_VALUE)
-        );
+        jScrollPane3.setPreferredSize(new java.awt.Dimension(2000, 2000));
+        jScrollPane3.setViewportView(jLabel5);
 
-        jTabbedPane1.addTab("Matriz", jPanel5);
+        jTabbedPane1.addTab("Lista Usuarios", jScrollPane3);
 
         jPanel6.setPreferredSize(new java.awt.Dimension(2000, 2000));
 
@@ -378,30 +576,86 @@ public class Tablero extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(jPanel6);
 
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Administrador\\Desktop\\Practica1s12017_200915305\\src\\practica1s12017_200915305\\Imagenes\\Dibujar.png")); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(31, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 738, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // Colocar Reportes....
+    
+        Reportes();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    public void Reportes() {
+
+        File Matriz = new File("Matriz.jpg");
+        File Cola = new File("Cola.jpg");
+        File ListaFichas = new File("Usuario.jpg");
+        File ListaDiccionario = new File("Diccionario.jpg");
+        File Usuario = new File("Circular.jpg");
+        ImageIcon imagen = new ImageIcon(Matriz.toString());
+        jLabel1.setIcon(imagen);
+        ImageIcon imagen2 = new ImageIcon(Cola.toString());
+        jLabel2.setIcon(imagen2);
+        ImageIcon imagen3 = new ImageIcon(ListaFichas.toString());
+        jLabel3.setIcon(imagen3);
+        ImageIcon imagen4 = new ImageIcon(ListaDiccionario.toString());
+        jLabel4.setIcon(imagen4);
+        ImageIcon imagen5 = new ImageIcon(Usuario.toString());
+        jLabel5.setIcon(imagen5);
+
+    }
 
     /**
      * @param args the command line arguments
@@ -439,13 +693,20 @@ public class Tablero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }

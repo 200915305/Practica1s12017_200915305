@@ -10,7 +10,7 @@ public class Lista {
     NodoLista ultimol;
     
     
-    public void AgregarLista(char a){
+    public void AgregarLista(String a){
     
         
       NodoLista nuevol = new NodoLista(a);

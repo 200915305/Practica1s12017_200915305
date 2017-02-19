@@ -38,7 +38,7 @@ public class ListaDiccionario {
             System.out.println("Diccionario=>"+temporal.palabra);
             temporal=temporal.siguienteD;
         }
-    
+       GraficarListaDiccionario();
     }
     
    

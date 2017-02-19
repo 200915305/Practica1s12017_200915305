@@ -30,9 +30,10 @@ public class Xml {
 			//Se obtiene la raiz 'tables'
 			Element rootNode = document.getRootElement();
                         
-                        String dimension = rootNode.getChildTextTrim("dimension");  
+                        String dimension = rootNode.getChildTextTrim("dimension");                          
 			System.out.println( "Dimension=> "+dimension);	 
-                        practica1s12017_200915305.Tablero.dimension = dimension;//Dimension de Tablero
+                        int dim = Integer.parseInt(dimension);
+                        practica1s12017_200915305.Tablero.dimension = dim;//Dimension de Tablero
                         
                         List lista_dobles = rootNode.getChildren("dobles");
                         System.out.println("Dobles.............");

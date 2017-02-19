@@ -19,7 +19,7 @@ public  class Cola {
     
     
     
-     public static char AgregarCola(char letra){ /// Cambiaste el metodo por una funcion 
+     public static String AgregarCola(String letra){ /// Cambiaste el metodo por una funcion 
         NodoCola nuevocola =new NodoCola(letra); /// para utilizar el satatic....
         
         if(primerocola==null){
@@ -92,7 +92,7 @@ public  class Cola {
     
     }
     
-    public char SacarCola(){
+    public  String SacarCola(){
         NodoCola temporal=primerocola;
         NodoCola actual= temporal;
         NodoCola aux=primerocola;

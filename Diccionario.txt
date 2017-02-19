@@ -1,99 +1,51 @@
 digraph G{ 
 label = "Diccionario";
 
-Nodo0 [shape=box,color="blue", label = "Palabra: UNO"];
+Nodo0 [shape=box,color="blue", label = "Palabra: hola"];
 
-NodeUNO0 [shape=box,color="blue", label = "Palabra: T"];
+Nodo1 [shape=box,color="blue", label = "Palabra: mundo"];
 
-NodeUNO0 [shape=box,color="blue", label = "Palabra: D"];
+Nodo2 [shape=box,color="blue", label = "Palabra: como"];
 
-NodeUNO0 [shape=box,color="blue", label = "Palabra: C"];
+Nodo3 [shape=box,color="blue", label = "Palabra: estas"];
 
-NodeUNO0 [shape=box,color="blue", label = "Palabra: A"];
+Nodo4 [shape=box,color="blue", label = "Palabra: uno"];
 
-NodeUNO0 [shape=box,color="blue", label = "Palabra: G"];
+Nodo5 [shape=box,color="blue", label = "Palabra: dos"];
 
-NodeUNO0 [shape=box,color="blue", label = "Palabra: C"];
+Nodo6 [shape=box,color="blue", label = "Palabra: tres"];
 
-NodeUNO0 [shape=box,color="blue", label = "Palabra: D"];
+Nodo7 [shape=box,color="blue", label = "Palabra: universidad"];
 
-Nodo1 [shape=box,color="blue", label = "Palabra: DOS"];
+Nodo8 [shape=box,color="blue", label = "Palabra: practica"];
 
-NodeDOS1 [shape=box,color="blue", label = "Palabra: O"];
+Nodo9 [shape=box,color="blue", label = "Palabra: primera"];
 
-NodeDOS1 [shape=box,color="blue", label = "Palabra: I"];
+Nodo10 [shape=box,color="blue", label = "Palabra: correo"];
 
-NodeDOS1 [shape=box,color="blue", label = "Palabra: S"];
-
-NodeDOS1 [shape=box,color="blue", label = "Palabra: I"];
-
-NodeDOS1 [shape=box,color="blue", label = "Palabra: E"];
-
-NodeDOS1 [shape=box,color="blue", label = "Palabra: B"];
-
-NodeDOS1 [shape=box,color="blue", label = "Palabra: N"];
-
-Nodo2 [shape=box,color="blue", label = "Palabra: TRES"];
-
-NodeTRES2 [shape=box,color="blue", label = "Palabra: L"];
-
-NodeTRES2 [shape=box,color="blue", label = "Palabra: H"];
-
-NodeTRES2 [shape=box,color="blue", label = "Palabra: N"];
-
-NodeTRES2 [shape=box,color="blue", label = "Palabra: A"];
-
-NodeTRES2 [shape=box,color="blue", label = "Palabra: I"];
-
-NodeTRES2 [shape=box,color="blue", label = "Palabra: U"];
-
-NodeTRES2 [shape=box,color="blue", label = "Palabra: E"];
+Nodo11 [shape=box,color="blue", label = "Palabra: juego"];
 
 Nodo0 -> Nodo1;
 
-NodoUNO0 -> NodoUNO1;
-
-NodoUNO0 -> NodoUNO1;
-
-NodoUNO0 -> NodoUNO1;
-
-NodoUNO0 -> NodoUNO1;
-
-NodoUNO0 -> NodoUNO1;
-
-NodoUNO0 -> NodoUNO1;
-
-NodoUNO0 -> NodoUNO1;
-
 Nodo1 -> Nodo2;
-
-NodoDOS1 -> NodoDOS2;
-
-NodoDOS1 -> NodoDOS2;
-
-NodoDOS1 -> NodoDOS2;
-
-NodoDOS1 -> NodoDOS2;
-
-NodoDOS1 -> NodoDOS2;
-
-NodoDOS1 -> NodoDOS2;
-
-NodoDOS1 -> NodoDOS2;
 
 Nodo2 -> Nodo3;
 
-NodoTRES2 -> NodoTRES3;
+Nodo3 -> Nodo4;
 
-NodoTRES2 -> NodoTRES3;
+Nodo4 -> Nodo5;
 
-NodoTRES2 -> NodoTRES3;
+Nodo5 -> Nodo6;
 
-NodoTRES2 -> NodoTRES3;
+Nodo6 -> Nodo7;
 
-NodoTRES2 -> NodoTRES3;
+Nodo7 -> Nodo8;
 
-NodoTRES2 -> NodoTRES3;
+Nodo8 -> Nodo9;
 
-NodoTRES2 -> NodoTRES3;
-{ rank = same;"Nodo0";"Nodo1";"Nodo2";"NodeUNO0";"NodeUNO0";"NodeUNO0";"NodeUNO0";"NodeUNO0";"NodeUNO0";"NodeUNO0";"NodeDOS1";"NodeDOS1";"NodeDOS1";"NodeDOS1";"NodeDOS1";"NodeDOS1";"NodeDOS1";"NodeTRES2";"NodeTRES2";"NodeTRES2";"NodeTRES2";"NodeTRES2";"NodeTRES2";"NodeTRES2";}}
+Nodo9 -> Nodo10;
+
+Nodo10 -> Nodo11;
+
+Nodo11 -> Nodo12;
+{ rank = same;"Nodo0";"Nodo1";"Nodo2";"Nodo3";"Nodo4";"Nodo5";"Nodo6";"Nodo7";"Nodo8";"Nodo9";"Nodo10";"Nodo11";}}

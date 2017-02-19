@@ -5,6 +5,7 @@ package practica1s12017_200915305;
 public class Usuarios extends javax.swing.JFrame {
 
     ListaCircular listaCircular = new ListaCircular();
+    Cola cola =new Cola();
     
     public Usuarios() {
         initComponents();
@@ -85,6 +86,10 @@ public class Usuarios extends javax.swing.JFrame {
         String usuario =jTextField1.getText();
         listaCircular.AgregarListaCircular(usuario);
         listaCircular.ImprimirListaCircular();
+        listaCircular.GraficarListaCircular();
+        cola.GraficarCola();
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

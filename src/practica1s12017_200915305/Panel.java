@@ -133,12 +133,13 @@ public class Panel extends javax.swing.JFrame {
                         .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(32, 32, 32))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 76, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton5)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -200,8 +201,8 @@ public class Panel extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // Agregar A Cola
          String nombre = jTextField1.getText();
-         char letra[] =nombre.toCharArray();
-         practica1s12017_200915305.Cola.AgregarCola(letra[0]);
+         
+         practica1s12017_200915305.Cola.AgregarCola(nombre);
         // Letras();
      
        
@@ -395,9 +396,9 @@ for(int k=0; k<cantidad; k++){
     
     int a = arreglo[k];
     String b = lista.get(a);
-    char c[]=b.toCharArray();
     
-    cola.AgregarCola(c[0]);
+    
+    cola.AgregarCola(b);
     
 }
     }

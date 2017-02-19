@@ -1,139 +1,71 @@
 digraph G{ 
 label = "Lista Circular";
 
-Nodo0 [shape=box,style=filled,color=".7 .3 1.0", label = "Usuario: uno"];
+Nodo0 [shape=box,style=filled,color=".7 .3 1.0", label = "Usuario: SE"];
 
-Nodeuno0 [shape=box,color="blue", label = "Letra: A"];
+NodeSE0 [shape=box,color="blue", label = "Letra: O"];
 
-Nodeuno1 [shape=box,color="blue", label = "Letra: J"];
+NodeSE1 [shape=box,color="blue", label = "Letra: E"];
 
-Nodeuno2 [shape=box,color="blue", label = "Letra: N"];
+NodeSE2 [shape=box,color="blue", label = "Letra: M"];
 
-Nodeuno3 [shape=box,color="blue", label = "Letra: L"];
+NodeSE3 [shape=box,color="blue", label = "Letra: S"];
 
-Nodeuno4 [shape=box,color="blue", label = "Letra: L"];
+NodeSE4 [shape=box,color="blue", label = "Letra: S"];
 
-Nodeuno5 [shape=box,color="blue", label = "Letra: A"];
+NodeSE5 [shape=box,color="blue", label = "Letra: B"];
 
-Nodeuno6 [shape=box,color="blue", label = "Letra: P"];
+NodeSE6 [shape=box,color="blue", label = "Letra: R"];
 
-Nodo1 [shape=box,style=filled,color=".7 .3 1.0", label = "Usuario: dos"];
+Nodo1 [shape=box,style=filled,color=".7 .3 1.0", label = "Usuario: GA"];
 
-Nodedos0 [shape=box,color="blue", label = "Letra: V"];
+NodeGA0 [shape=box,color="blue", label = "Letra: T"];
 
-Nodedos1 [shape=box,color="blue", label = "Letra: G"];
+NodeGA1 [shape=box,color="blue", label = "Letra: N"];
 
-Nodedos2 [shape=box,color="blue", label = "Letra: S"];
+NodeGA2 [shape=box,color="blue", label = "Letra: R"];
 
-Nodedos3 [shape=box,color="blue", label = "Letra: R"];
+NodeGA3 [shape=box,color="blue", label = "Letra: A"];
 
-Nodedos4 [shape=box,color="blue", label = "Letra: L"];
+NodeGA4 [shape=box,color="blue", label = "Letra: R"];
 
-Nodedos5 [shape=box,color="blue", label = "Letra: D"];
+NodeGA5 [shape=box,color="blue", label = "Letra: E"];
 
-Nodedos6 [shape=box,color="blue", label = "Letra: U"];
-
-Nodo2 [shape=box,style=filled,color=".7 .3 1.0", label = "Usuario: tres"];
-
-Nodetres0 [shape=box,color="blue", label = "Letra: G"];
-
-Nodetres1 [shape=box,color="blue", label = "Letra: M"];
-
-Nodetres2 [shape=box,color="blue", label = "Letra: I"];
-
-Nodetres3 [shape=box,color="blue", label = "Letra: E"];
-
-Nodetres4 [shape=box,color="blue", label = "Letra: U"];
-
-Nodetres5 [shape=box,color="blue", label = "Letra: O"];
-
-Nodetres6 [shape=box,color="blue", label = "Letra: A"];
-
-Nodo3 [shape=box,style=filled,color=".7 .3 1.0", label = "Usuario: cuatro"];
-
-Nodecuatro0 [shape=box,color="blue", label = "Letra: U"];
-
-Nodecuatro1 [shape=box,color="blue", label = "Letra: I"];
-
-Nodecuatro2 [shape=box,color="blue", label = "Letra: A"];
-
-Nodecuatro3 [shape=box,color="blue", label = "Letra: T"];
-
-Nodecuatro4 [shape=box,color="blue", label = "Letra: X"];
-
-Nodecuatro5 [shape=box,color="blue", label = "Letra: S"];
-
-Nodecuatro6 [shape=box,color="blue", label = "Letra: D"];
+NodeGA6 [shape=box,color="blue", label = "Letra: F"];
 
 Nodo0 -> Nodo1;
 
-Nodeuno0 -> Nodeuno1;
+NodeSE0 -> NodeSE1;
 
-Nodeuno1 -> Nodeuno2;
+NodeSE1 -> NodeSE2;
 
-Nodeuno2 -> Nodeuno3;
+NodeSE2 -> NodeSE3;
 
-Nodeuno3 -> Nodeuno4;
+NodeSE3 -> NodeSE4;
 
-Nodeuno4 -> Nodeuno5;
+NodeSE4 -> NodeSE5;
 
-Nodeuno5 -> Nodeuno6;
+NodeSE5 -> NodeSE6;
 
-Nodeuno6 -> Nodeuno7;
+NodeSE6 -> NodeSE7;
 
-Nodo1 -> Nodo2;
+Nodo1 -> Nodo0;
 
-Nodedos0 -> Nodedos1;
+NodeGA0 -> NodeGA1;
 
-Nodedos1 -> Nodedos2;
+NodeGA1 -> NodeGA2;
 
-Nodedos2 -> Nodedos3;
+NodeGA2 -> NodeGA3;
 
-Nodedos3 -> Nodedos4;
+NodeGA3 -> NodeGA4;
 
-Nodedos4 -> Nodedos5;
+NodeGA4 -> NodeGA5;
 
-Nodedos5 -> Nodedos6;
+NodeGA5 -> NodeGA6;
 
-Nodedos6 -> Nodedos7;
+NodeGA6 -> NodeGA7;
 
-Nodo2 -> Nodo3;
+Nodo0 -> NodeSE0;
 
-Nodetres0 -> Nodetres1;
-
-Nodetres1 -> Nodetres2;
-
-Nodetres2 -> Nodetres3;
-
-Nodetres3 -> Nodetres4;
-
-Nodetres4 -> Nodetres5;
-
-Nodetres5 -> Nodetres6;
-
-Nodetres6 -> Nodetres7;
-
-Nodo3 -> Nodo0;
-
-Nodecuatro0 -> Nodecuatro1;
-
-Nodecuatro1 -> Nodecuatro2;
-
-Nodecuatro2 -> Nodecuatro3;
-
-Nodecuatro3 -> Nodecuatro4;
-
-Nodecuatro4 -> Nodecuatro5;
-
-Nodecuatro5 -> Nodecuatro6;
-
-Nodecuatro6 -> Nodecuatro7;
-
-Nodo0 -> Nodeuno0;
-
-Nodo1 -> Nodedos0;
-
-Nodo2 -> Nodetres0;
-
-Nodo3 -> Nodecuatro0;
-{ rank = same;"Nodo0";"Nodo1";"Nodo2";"Nodo3";"Nodeuno0";"Nodeuno1";"Nodeuno2";"Nodeuno3";"Nodeuno4";"Nodeuno5";"Nodeuno6";"Nodedos0";"Nodedos1";"Nodedos2";"Nodedos3";"Nodedos4";"Nodedos5";"Nodedos6";"Nodetres0";"Nodetres1";"Nodetres2";"Nodetres3";"Nodetres4";"Nodetres5";"Nodetres6";"Nodecuatro0";"Nodecuatro1";"Nodecuatro2";"Nodecuatro3";"Nodecuatro4";"Nodecuatro5";"Nodecuatro6";}}
+Nodo1 -> NodeGA0;
+{ rank = same;"Nodo0";"Nodo1";"NodeSE0";"NodeSE1";"NodeSE2";"NodeSE3";"NodeSE4";"NodeSE5";"NodeSE6";"NodeGA0";"NodeGA1";"NodeGA2";"NodeGA3";"NodeGA4";"NodeGA5";"NodeGA6";}}
