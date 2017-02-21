@@ -1,71 +1,37 @@
 digraph G{ 
 label = "Lista Circular";
 
-Nodo0 [shape=box,style=filled,color=".7 .3 1.0", label = "Usuario: SE"];
+Nodo0 [shape=box,style=filled,color=".7 .3 1.0", label = "Usuario: dd"];
 
-NodeSE0 [shape=box,color="blue", label = "Letra: O"];
+Nodedd0 [shape=box,color="blue", label = "Letra: T"];
 
-NodeSE1 [shape=box,color="blue", label = "Letra: E"];
+Nodedd1 [shape=box,color="blue", label = "Letra: C"];
 
-NodeSE2 [shape=box,color="blue", label = "Letra: M"];
+Nodedd2 [shape=box,color="blue", label = "Letra: I"];
 
-NodeSE3 [shape=box,color="blue", label = "Letra: S"];
+Nodedd3 [shape=box,color="blue", label = "Letra: I"];
 
-NodeSE4 [shape=box,color="blue", label = "Letra: S"];
+Nodedd4 [shape=box,color="blue", label = "Letra: O"];
 
-NodeSE5 [shape=box,color="blue", label = "Letra: B"];
+Nodedd5 [shape=box,color="blue", label = "Letra: A"];
 
-NodeSE6 [shape=box,color="blue", label = "Letra: R"];
+Nodedd6 [shape=box,color="blue", label = "Letra: R"];
 
-Nodo1 [shape=box,style=filled,color=".7 .3 1.0", label = "Usuario: GA"];
+Nodo0 -> Nodo0;
 
-NodeGA0 [shape=box,color="blue", label = "Letra: T"];
+Nodedd0 -> Nodedd1;
 
-NodeGA1 [shape=box,color="blue", label = "Letra: N"];
+Nodedd1 -> Nodedd2;
 
-NodeGA2 [shape=box,color="blue", label = "Letra: R"];
+Nodedd2 -> Nodedd3;
 
-NodeGA3 [shape=box,color="blue", label = "Letra: A"];
+Nodedd3 -> Nodedd4;
 
-NodeGA4 [shape=box,color="blue", label = "Letra: R"];
+Nodedd4 -> Nodedd5;
 
-NodeGA5 [shape=box,color="blue", label = "Letra: E"];
+Nodedd5 -> Nodedd6;
 
-NodeGA6 [shape=box,color="blue", label = "Letra: F"];
+Nodedd6 -> Nodedd7;
 
-Nodo0 -> Nodo1;
-
-NodeSE0 -> NodeSE1;
-
-NodeSE1 -> NodeSE2;
-
-NodeSE2 -> NodeSE3;
-
-NodeSE3 -> NodeSE4;
-
-NodeSE4 -> NodeSE5;
-
-NodeSE5 -> NodeSE6;
-
-NodeSE6 -> NodeSE7;
-
-Nodo1 -> Nodo0;
-
-NodeGA0 -> NodeGA1;
-
-NodeGA1 -> NodeGA2;
-
-NodeGA2 -> NodeGA3;
-
-NodeGA3 -> NodeGA4;
-
-NodeGA4 -> NodeGA5;
-
-NodeGA5 -> NodeGA6;
-
-NodeGA6 -> NodeGA7;
-
-Nodo0 -> NodeSE0;
-
-Nodo1 -> NodeGA0;
-{ rank = same;"Nodo0";"Nodo1";"NodeSE0";"NodeSE1";"NodeSE2";"NodeSE3";"NodeSE4";"NodeSE5";"NodeSE6";"NodeGA0";"NodeGA1";"NodeGA2";"NodeGA3";"NodeGA4";"NodeGA5";"NodeGA6";}}
+Nodo0 -> Nodedd0;
+{ rank = same;"Nodo0";"Nodedd0";"Nodedd1";"Nodedd2";"Nodedd3";"Nodedd4";"Nodedd5";"Nodedd6";}}

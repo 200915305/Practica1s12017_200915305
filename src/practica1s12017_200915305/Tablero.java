@@ -8,25 +8,30 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import static practica1s12017_200915305.ListaCircular.contarc;
-import static practica1s12017_200915305.ListaCircular.primeroc;
+
+
+
 
 /**
  *
  * @author ubuntu
  */
 public class Tablero extends javax.swing.JFrame {
-
+    
+    Hilo hilo = new Hilo();
     Matriz matriz = new Matriz();
     ListaCircular listaCircular = new ListaCircular();
     Lista lista = new Lista();
-    public  NodoCircular primeroc;
-
+    public int contador=0;  
+            
    
     int contador_ID = 1;
     public static int dimension;
@@ -49,7 +54,8 @@ public class Tablero extends javax.swing.JFrame {
         llenar_matriz(contador_columnas, contador_filas, "null");
         AgregarDoblesyTriples();
         crear_pane_principal(contador_filas, contador_columnas);
-        CrearObjetos();
+        CrearObjetos(); 
+        hilo.start();
 
     }
 
@@ -166,8 +172,10 @@ public class Tablero extends javax.swing.JFrame {
                                     label[donde].setIcon(icono);
                                     label[donde].repaint();
                                     label[donde].setIcon(icono);
-                                    matriz.modificar(conta_celdas, objeto_seleccionado);
-                                    //  matriz.imprimir_matriz();
+                                   
+                                    matriz.modificar(conta_celdas+1, objeto_seleccionado);
+                                    System.out.println("Se selecciono laaaaaaaa"+donde+","+objeto_seleccionado);
+                                    matriz.GraficarMatriz();
                                     objeto_seleccionado = "";
                                 }
                             }
@@ -244,8 +252,9 @@ public class Tablero extends javax.swing.JFrame {
                                             label[donde].setIcon(icono);
                                             label[donde].repaint();
                                             label[donde].setIcon(icono);
-                                            matriz.modificar(conta_celdas, objeto_seleccionado);
-                                            //  matriz.imprimir_matriz();
+                                            matriz.modificar(conta_celdas+1, objeto_seleccionado);
+                                            System.out.println("Se selecciono laaaaaaaa"+conta_celdas+","+objeto_seleccionado);
+                                            matriz.GraficarMatriz();
                                             objeto_seleccionado = "";
                                         }
                                     }
@@ -287,16 +296,20 @@ public class Tablero extends javax.swing.JFrame {
         }
     }
 
-    public void CrearObjetos() {
-        {
+    public void CrearObjetos(){
+            
             NodoCircular temporal=practica1s12017_200915305.ListaCircular.primeroc;
             NodoLista temp;
-            temp = temporal.primerol;
-
+            NodoLista actual;
+            String Usuario=practica1s12017_200915305.ListaCircular.UsuarioActual.get(contador);
+           for(int i=0; i<contarc;i++){
+            temp=temporal.primerol;
+                if(temporal.usuario.equals(Usuario)){
+                   
             int tamaño_fila;
             int tamaño_columna;
 
-            int largo = 70 * longitud1;
+            int largo = 50 * longitud1;
             int ancho = 200;
 
             this.jPanel1.removeAll();
@@ -328,7 +341,7 @@ public class Tablero extends javax.swing.JFrame {
                     label[Contador_celdas].setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                     label[Contador_celdas].setBorder(BorderFactory.createLineBorder(Color.BLUE));
                     ImageIcon img = new ImageIcon(cual_objeto(temp.Letra));
-                    Icon icono = new ImageIcon(img.getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
+                    Icon icono = new ImageIcon(img.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
                     label[Contador_celdas].removeAll();
                     label[Contador_celdas].setIcon(icono);
                     label[Contador_celdas].repaint();
@@ -350,11 +363,14 @@ public class Tablero extends javax.swing.JFrame {
 
                         @Override
                         public void mouseClicked(MouseEvent me) {
-                       //  temp=temporal.primerol;
-                            // objeto_seleccionado = temp.Letra;
-                            //  carga_objetos.ListadeObjetos.EliminarListaDoble(carga_objetos.ListadeObjetos, 0);
-                            CrearObjetos();
-                        //Crear_Juego CJ = new Crear_Juego();
+                             
+                             practica1s12017_200915305.ListaCircular.Eliminar();
+                             objeto_seleccionado = practica1s12017_200915305.ListaCircular.temp2.Letra;                      
+                             listaCircular.GraficarListaCircular();
+
+                             System.out.println("............>>>"+practica1s12017_200915305.ListaCircular.temp2.Letra+"\n");
+                             CrearObjetos();
+                            //Crear_Juego CJ = new Crear_Juego();
                             //cerrar();
                             //CJ.setVisible(true);
                             //actualizar();
@@ -395,7 +411,7 @@ public class Tablero extends javax.swing.JFrame {
                             label[columnas].setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                             label[columnas].setBorder(BorderFactory.createLineBorder(Color.BLUE));
                             ImageIcon img1 = new ImageIcon(cual_objeto(temp.Letra));
-                            Icon icono1 = new ImageIcon(img1.getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT));
+                            Icon icono1 = new ImageIcon(img1.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
                             label[columnas].removeAll();
                             label[columnas].setIcon(icono1);
                             label[columnas].repaint();
@@ -410,38 +426,47 @@ public class Tablero extends javax.swing.JFrame {
                     }
                 }
             }
+                }
+                temporal=temporal.sig;
+           }// Final del Primer for ...for(int i=0; i<contarc;i++)
+           
+            contador++;
+      if (contador>=contarc) {
+          contador=0;
+      }
+           
         }
 
-    }
+    
 
     public String cual_objeto(String ob) {
-        File Triple = new File("src\\practica1s12017_200915305\\Imagenes\\Triple.png");
-        File Doble = new File("src\\practica1s12017_200915305\\Imagenes\\Doble.png");
-        File A = new File("src\\practica1s12017_200915305\\Imagenes\\A.png");
-        File B = new File("src\\practica1s12017_200915305\\Imagenes\\B.jpg");
-        File C = new File("src\\practica1s12017_200915305\\Imagenes\\C.jpg");
-        File D = new File("src\\practica1s12017_200915305\\Imagenes\\D.png");
-        File E = new File("src\\practica1s12017_200915305\\Imagenes\\E.jpg");
-        File F = new File("src\\practica1s12017_200915305\\Imagenes\\F.png");
-        File G = new File("src\\practica1s12017_200915305\\Imagenes\\G.png");
-        File H = new File("src\\practica1s12017_200915305\\Imagenes\\H.png");
-        File I = new File("src\\practica1s12017_200915305\\Imagenes\\I.png");
-        File J = new File("src\\practica1s12017_200915305\\Imagenes\\J.png");
-        File L = new File("src\\practica1s12017_200915305\\Imagenes\\L.png");
-        File M = new File("src\\practica1s12017_200915305\\Imagenes\\M.png");
-        File N = new File("src\\practica1s12017_200915305\\Imagenes\\N.png");
-        File Ñ = new File("src\\practica1s12017_200915305\\Imagenes\\Ñ.png");
-        File O = new File("src\\practica1s12017_200915305\\Imagenes\\O.png");
-        File P = new File("src\\practica1s12017_200915305\\Imagenes\\P.png");
-        File Q = new File("src\\practica1s12017_200915305\\Imagenes\\Q.png");
-        File R = new File("src\\practica1s12017_200915305\\Imagenes\\R.png");
-        File S = new File("src\\practica1s12017_200915305\\Imagenes\\S.png");
-        File T = new File("src\\practica1s12017_200915305\\Imagenes\\T.png");
-        File U = new File("src\\practica1s12017_200915305\\Imagenes\\U.png");
-        File V = new File("src\\practica1s12017_200915305\\Imagenes\\V.png");
-        File X = new File("src\\practica1s12017_200915305\\Imagenes\\X.png");
-        File Y = new File("src\\practica1s12017_200915305\\Imagenes\\Y.png");
-        File Z = new File("src\\practica1s12017_200915305\\Imagenes\\Z.png");
+        File Triple = new File("Imagenes\\Triple.png");
+        File Doble = new File("Imagenes\\Doble.png");
+        File A = new File("Imagenes\\A.png");
+        File B = new File("Imagenes\\B.jpg");
+        File C = new File("Imagenes\\C.jpg");
+        File D = new File("Imagenes\\D.png");
+        File E = new File("Imagenes\\E.jpg");
+        File F = new File("Imagenes\\F.png");
+        File G = new File("Imagenes\\G.png");
+        File H = new File("Imagenes\\H.png");
+        File I = new File("Imagenes\\I.png");
+        File J = new File("Imagenes\\J.png");
+        File L = new File("Imagenes\\L.png");
+        File M = new File("Imagenes\\M.png");
+        File N = new File("Imagenes\\N.png");
+        File Ñ = new File("Imagenes\\Ñ.png");
+        File O = new File("Imagenes\\O.png");
+        File P = new File("Imagenes\\P.png");
+        File Q = new File("Imagenes\\Q.png");
+        File R = new File("Imagenes\\R.png");
+        File S = new File("Imagenes\\S.png");
+        File T = new File("Imagenes\\T.png");
+        File U = new File("Imagenes\\U.png");
+        File V = new File("Imagenes\\V.png");
+        File X = new File("Imagenes\\X.png");
+        File Y = new File("Imagenes\\Y.png");
+        File Z = new File("Imagenes\\Z.png");
 
         if (ob.equals("A")) {
             return A.toString();
@@ -632,28 +657,48 @@ public class Tablero extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // Colocar Reportes....
-    
-        Reportes();
+       
+   
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    public void Reportes() {
-
+    public static void Reportes() {
+        
         File Matriz = new File("Matriz.jpg");
+        ImageIcon img = new ImageIcon(Matriz.toString());
+        Icon icono = new ImageIcon(img.getImage().getScaledInstance(img.getIconWidth(), img.getIconHeight(), Image.SCALE_DEFAULT));
+        jLabel1.removeAll();
+        jLabel1.setIcon(icono);
+        jLabel1.repaint();
+        jLabel1.setIcon(icono);
         File Cola = new File("Cola.jpg");
-        File ListaFichas = new File("Usuario.jpg");
-        File ListaDiccionario = new File("Diccionario.jpg");
-        File Usuario = new File("Circular.jpg");
-        ImageIcon imagen = new ImageIcon(Matriz.toString());
-        jLabel1.setIcon(imagen);
-        ImageIcon imagen2 = new ImageIcon(Cola.toString());
-        jLabel2.setIcon(imagen2);
-        ImageIcon imagen3 = new ImageIcon(ListaFichas.toString());
-        jLabel3.setIcon(imagen3);
-        ImageIcon imagen4 = new ImageIcon(ListaDiccionario.toString());
-        jLabel4.setIcon(imagen4);
-        ImageIcon imagen5 = new ImageIcon(Usuario.toString());
-        jLabel5.setIcon(imagen5);
+        ImageIcon img2 = new ImageIcon(Cola.toString());
+        Icon icono2 = new ImageIcon(img2.getImage().getScaledInstance(img2.getIconWidth(), img2.getIconHeight(),Image.SCALE_DEFAULT ));
+        jLabel2.removeAll();
+        jLabel2.setIcon(icono2);
+        jLabel2.repaint();
+        jLabel2.setIcon(icono2);
+        File Usuario = new File("Usuario.jpg");
+        ImageIcon img3 = new ImageIcon(Usuario.toString());
+        Icon icono3 = new ImageIcon(img3.getImage().getScaledInstance(img3.getIconWidth(), img3.getIconHeight(), Image.SCALE_DEFAULT));
+        jLabel3.removeAll();
+        jLabel3.setIcon(icono3);
+        jLabel3.repaint();
+        jLabel3.setIcon(icono3);
+        File Diccionario = new File("Diccionario.jpg");
+        ImageIcon img4 = new ImageIcon(Diccionario.toString());
+        Icon icono4 = new ImageIcon(img4.getImage().getScaledInstance(img4.getIconWidth(), img4.getIconHeight(), Image.SCALE_DEFAULT));
+        jLabel4.removeAll();
+        jLabel4.setIcon(icono4);
+        jLabel4.repaint();
+        jLabel4.setIcon(icono4);
+        File Circular = new File("Circular.jpg");
+        ImageIcon img5 = new ImageIcon(Circular.toString());
+        Icon icono5 = new ImageIcon(img5.getImage().getScaledInstance(img5.getIconWidth(), img5.getIconHeight(), Image.SCALE_DEFAULT));
+        jLabel5.removeAll();
+        jLabel5.setIcon(icono5);
+        jLabel5.repaint();
+        jLabel5.setIcon(icono5);
 
     }
 
@@ -694,11 +739,11 @@ public class Tablero extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    public static javax.swing.JLabel jLabel1;
+    public static javax.swing.JLabel jLabel2;
+    public static javax.swing.JLabel jLabel3;
+    public static javax.swing.JLabel jLabel4;
+    public static javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
@@ -709,4 +754,55 @@ public class Tablero extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
+
+    private class Hilo extends Thread{
+   
+        public void run(){
+              System.out.println("------------------HILOOOOOOO");
+        
+                 while (true) {                     
+                      File Matriz = new File("Matriz.jpg");
+        ImageIcon img = new ImageIcon(Matriz.toString());
+        Icon icono = new ImageIcon(img.getImage().getScaledInstance(img.getIconWidth(), img.getIconHeight(), Image.SCALE_DEFAULT));
+        jLabel1.removeAll();
+        jLabel1.setIcon(icono);
+        jLabel1.repaint();
+        jLabel1.setIcon(icono);
+        File Cola = new File("Cola.jpg");
+        ImageIcon img2 = new ImageIcon(Cola.toString());
+        Icon icono2 = new ImageIcon(img2.getImage().getScaledInstance(img2.getIconWidth(), img2.getIconHeight(),Image.SCALE_DEFAULT ));
+        jLabel2.removeAll();
+        jLabel2.setIcon(icono2);
+        jLabel2.repaint();
+        jLabel2.setIcon(icono2);
+        File Usuario = new File("Usuario.jpg");
+        ImageIcon img3 = new ImageIcon(Usuario.toString());
+        Icon icono3 = new ImageIcon(img3.getImage().getScaledInstance(img3.getIconWidth(), img3.getIconHeight(), Image.SCALE_DEFAULT));
+        jLabel3.removeAll();
+        jLabel3.setIcon(icono3);
+        jLabel3.repaint();
+        jLabel3.setIcon(icono3);
+        File Diccionario = new File("Diccionario.jpg");
+        ImageIcon img4 = new ImageIcon(Diccionario.toString());
+        Icon icono4 = new ImageIcon(img4.getImage().getScaledInstance(img4.getIconWidth(), img4.getIconHeight(), Image.SCALE_DEFAULT));
+        jLabel4.removeAll();
+        jLabel4.setIcon(icono4);
+        jLabel4.repaint();
+        jLabel4.setIcon(icono4);
+        File Circular = new File("Circular.jpg");
+        ImageIcon img5 = new ImageIcon(Circular.toString());
+        Icon icono5 = new ImageIcon(img5.getImage().getScaledInstance(img5.getIconWidth(), img5.getIconHeight(), Image.SCALE_DEFAULT));
+        jLabel5.removeAll();
+        jLabel5.setIcon(icono5);
+        jLabel5.repaint();
+        jLabel5.setIcon(icono5);
+                     
+                 }
+               
+             
+        }
+    
+    }
+
+
 }

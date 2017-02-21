@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class Graphviz {
    
-    public boolean Guardar_Codigo_GRafo(File F , String Cod_Graf) throws IOException {
+    public  boolean Guardar_Codigo_GRafo(File F , String Cod_Graf) throws IOException {
        try {
            FileWriter Archivo = new FileWriter((F),true);
            if (!F.exists()) {F.createNewFile();}

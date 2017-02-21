@@ -3,11 +3,12 @@ package practica1s12017_200915305;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import practica1s12017_200915305.Cola;
+import java.util.ArrayList;
 
 
 
@@ -16,15 +17,21 @@ public  class ListaCircular {
      Graphviz A = new Graphviz();
      
    public static  NodoCircular primeroc;
+   public static  NodoLista primerol;
    public static  NodoCircular ultimoc;
-   public static  NodoCircular temporal=primeroc;
-
-  public static Cola cola =new Cola();
- 
+   NodoCircular temporal =primeroc;
+   public static  NodoLista actual;
+   public static  NodoLista temp;
+   public static  NodoLista temp2;
+   public static  NodoLista aux;
+  
+   public static Cola cola =new Cola();
+   public static ArrayList<String> UsuarioActual = new ArrayList<String>();
    public static int contarc;
-    int dato=0;
+   int dato=0;
    public static  int repetido=0;
-    int NoRepetido=0;
+   int NoRepetido=0;
+   public static int contador=0;
   
     
  public static String AgregarListaCircular(String usuario){
@@ -113,7 +120,7 @@ public  class ListaCircular {
     }
  
   public void ImprimirListaCircular(){
-     NodoCircular temporal;
+        NodoCircular temporal;
         temporal = primeroc;
         
         NodoLista temp;
@@ -135,6 +142,35 @@ public  class ListaCircular {
         GraficarListaCircular();   
         
     }
+  
+  public static void Eliminar(){
+     
+      NodoCircular temporal=primeroc;
+     String Usuario=UsuarioActual.get(contador);
+      for(int i=0; i<contarc;i++){
+          temp=temporal.primerol;
+          
+            if(temporal.usuario.equals(Usuario)){
+             while (temp.sig!=null) {          
+                  actual=temp;
+                  temp=temp.sig;
+                  temp2=actual.sig;
+               }
+               actual.sig=null;
+            }
+       temporal=temporal.sig;    
+      }
+      
+        
+        System.out.println("------------------");
+       // ImprimirListaCircular();
+        //GraficarListaCircular();  
+      contador++;
+      if (contador>=contarc) {
+          contador=0;
+      }
+  }
+
   
   public void GraficarListaCircular(){
         String nodos ="";

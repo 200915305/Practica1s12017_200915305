@@ -1,195 +1,195 @@
 digraph G{ 
 label = "Cola";
 
-Nodo0 [shape=box,color="blue", label = "Palabra: I"];
+Nodo0 [shape=box,color="blue", label = "Palabra: A"];
 
-Nodo1 [shape=box,color="blue", label = "Palabra: X"];
+Nodo1 [shape=box,color="blue", label = "Palabra: H"];
 
-Nodo2 [shape=box,color="blue", label = "Palabra: H"];
+Nodo2 [shape=box,color="blue", label = "Palabra: I"];
 
-Nodo3 [shape=box,color="blue", label = "Palabra: Y"];
+Nodo3 [shape=box,color="blue", label = "Palabra: J"];
 
-Nodo4 [shape=box,color="blue", label = "Palabra: E"];
+Nodo4 [shape=box,color="blue", label = "Palabra: I"];
 
-Nodo5 [shape=box,color="blue", label = "Palabra: L"];
+Nodo5 [shape=box,color="blue", label = "Palabra: P"];
 
-Nodo6 [shape=box,color="blue", label = "Palabra: E"];
+Nodo6 [shape=box,color="blue", label = "Palabra: O"];
 
-Nodo7 [shape=box,color="blue", label = "Palabra: E"];
+Nodo7 [shape=box,color="blue", label = "Palabra: M"];
 
-Nodo8 [shape=box,color="blue", label = "Palabra: C"];
+Nodo8 [shape=box,color="blue", label = "Palabra: T"];
 
-Nodo9 [shape=box,color="blue", label = "Palabra: A"];
+Nodo9 [shape=box,color="blue", label = "Palabra: O"];
 
-Nodo10 [shape=box,color="blue", label = "Palabra: A"];
+Nodo10 [shape=box,color="blue", label = "Palabra: T"];
 
-Nodo11 [shape=box,color="blue", label = "Palabra: R"];
+Nodo11 [shape=box,color="blue", label = "Palabra: A"];
 
-Nodo12 [shape=box,color="blue", label = "Palabra: P"];
+Nodo12 [shape=box,color="blue", label = "Palabra: C"];
 
-Nodo13 [shape=box,color="blue", label = "Palabra: U"];
+Nodo13 [shape=box,color="blue", label = "Palabra: P"];
 
-Nodo14 [shape=box,color="blue", label = "Palabra: A"];
+Nodo14 [shape=box,color="blue", label = "Palabra: O"];
 
-Nodo15 [shape=box,color="blue", label = "Palabra: N"];
+Nodo15 [shape=box,color="blue", label = "Palabra: A"];
 
-Nodo16 [shape=box,color="blue", label = "Palabra: T"];
+Nodo16 [shape=box,color="blue", label = "Palabra: C"];
 
-Nodo17 [shape=box,color="blue", label = "Palabra: S"];
+Nodo17 [shape=box,color="blue", label = "Palabra: A"];
 
-Nodo18 [shape=box,color="blue", label = "Palabra: N"];
+Nodo18 [shape=box,color="blue", label = "Palabra: O"];
 
-Nodo19 [shape=box,color="blue", label = "Palabra: I"];
+Nodo19 [shape=box,color="blue", label = "Palabra: N"];
 
 Nodo20 [shape=box,color="blue", label = "Palabra: A"];
 
 Nodo21 [shape=box,color="blue", label = "Palabra: E"];
 
-Nodo22 [shape=box,color="blue", label = "Palabra: N"];
+Nodo22 [shape=box,color="blue", label = "Palabra: E"];
 
-Nodo23 [shape=box,color="blue", label = "Palabra: U"];
+Nodo23 [shape=box,color="blue", label = "Palabra: I"];
 
-Nodo24 [shape=box,color="blue", label = "Palabra: U"];
+Nodo24 [shape=box,color="blue", label = "Palabra: D"];
 
-Nodo25 [shape=box,color="blue", label = "Palabra: R"];
+Nodo25 [shape=box,color="blue", label = "Palabra: S"];
 
-Nodo26 [shape=box,color="blue", label = "Palabra: I"];
+Nodo26 [shape=box,color="blue", label = "Palabra: E"];
 
-Nodo27 [shape=box,color="blue", label = "Palabra: D"];
+Nodo27 [shape=box,color="blue", label = "Palabra: R"];
 
-Nodo28 [shape=box,color="blue", label = "Palabra: R"];
+Nodo28 [shape=box,color="blue", label = "Palabra: U"];
 
-Nodo29 [shape=box,color="blue", label = "Palabra: F"];
+Nodo29 [shape=box,color="blue", label = "Palabra: R"];
 
-Nodo30 [shape=box,color="blue", label = "Palabra: L"];
+Nodo30 [shape=box,color="blue", label = "Palabra: U"];
 
-Nodo31 [shape=box,color="blue", label = "Palabra: I"];
+Nodo31 [shape=box,color="blue", label = "Palabra: O"];
 
-Nodo32 [shape=box,color="blue", label = "Palabra: R"];
+Nodo32 [shape=box,color="blue", label = "Palabra: A"];
 
-Nodo33 [shape=box,color="blue", label = "Palabra: A"];
+Nodo33 [shape=box,color="blue", label = "Palabra: F"];
 
 Nodo34 [shape=box,color="blue", label = "Palabra: G"];
 
-Nodo35 [shape=box,color="blue", label = "Palabra: T"];
+Nodo35 [shape=box,color="blue", label = "Palabra: E"];
 
-Nodo36 [shape=box,color="blue", label = "Palabra: C"];
+Nodo36 [shape=box,color="blue", label = "Palabra: T"];
 
-Nodo37 [shape=box,color="blue", label = "Palabra: C"];
+Nodo37 [shape=box,color="blue", label = "Palabra: R"];
 
-Nodo38 [shape=box,color="blue", label = "Palabra: Z"];
+Nodo38 [shape=box,color="blue", label = "Palabra: O"];
 
-Nodo39 [shape=box,color="blue", label = "Palabra: R"];
+Nodo39 [shape=box,color="blue", label = "Palabra: S"];
 
-Nodo40 [shape=box,color="blue", label = "Palabra: A"];
+Nodo40 [shape=box,color="blue", label = "Palabra: E"];
 
-Nodo41 [shape=box,color="blue", label = "Palabra: B"];
+Nodo41 [shape=box,color="blue", label = "Palabra: D"];
 
-Nodo42 [shape=box,color="blue", label = "Palabra: A"];
+Nodo42 [shape=box,color="blue", label = "Palabra: S"];
 
-Nodo43 [shape=box,color="blue", label = "Palabra: U"];
+Nodo43 [shape=box,color="blue", label = "Palabra: I"];
 
-Nodo44 [shape=box,color="blue", label = "Palabra: T"];
+Nodo44 [shape=box,color="blue", label = "Palabra: Z"];
 
-Nodo45 [shape=box,color="blue", label = "Palabra: L"];
+Nodo45 [shape=box,color="blue", label = "Palabra: I"];
 
-Nodo46 [shape=box,color="blue", label = "Palabra: A"];
+Nodo46 [shape=box,color="blue", label = "Palabra: M"];
 
-Nodo47 [shape=box,color="blue", label = "Palabra: S"];
+Nodo47 [shape=box,color="blue", label = "Palabra: I"];
 
-Nodo48 [shape=box,color="blue", label = "Palabra: O"];
+Nodo48 [shape=box,color="blue", label = "Palabra: E"];
 
-Nodo49 [shape=box,color="blue", label = "Palabra: C"];
+Nodo49 [shape=box,color="blue", label = "Palabra: A"];
 
-Nodo50 [shape=box,color="blue", label = "Palabra: Q"];
+Nodo50 [shape=box,color="blue", label = "Palabra: E"];
 
-Nodo51 [shape=box,color="blue", label = "Palabra: L"];
+Nodo51 [shape=box,color="blue", label = "Palabra: V"];
 
-Nodo52 [shape=box,color="blue", label = "Palabra: O"];
+Nodo52 [shape=box,color="blue", label = "Palabra: D"];
 
-Nodo53 [shape=box,color="blue", label = "Palabra: A"];
+Nodo53 [shape=box,color="blue", label = "Palabra: D"];
 
-Nodo54 [shape=box,color="blue", label = "Palabra: M"];
+Nodo54 [shape=box,color="blue", label = "Palabra: E"];
 
-Nodo55 [shape=box,color="blue", label = "Palabra: S"];
+Nodo55 [shape=box,color="blue", label = "Palabra: B"];
 
-Nodo56 [shape=box,color="blue", label = "Palabra: O"];
+Nodo56 [shape=box,color="blue", label = "Palabra: L"];
 
-Nodo57 [shape=box,color="blue", label = "Palabra: O"];
+Nodo57 [shape=box,color="blue", label = "Palabra: L"];
 
-Nodo58 [shape=box,color="blue", label = "Palabra: E"];
+Nodo58 [shape=box,color="blue", label = "Palabra: C"];
 
-Nodo59 [shape=box,color="blue", label = "Palabra: P"];
+Nodo59 [shape=box,color="blue", label = "Palabra: E"];
 
-Nodo60 [shape=box,color="blue", label = "Palabra: U"];
+Nodo60 [shape=box,color="blue", label = "Palabra: N"];
 
-Nodo61 [shape=box,color="blue", label = "Palabra: J"];
+Nodo61 [shape=box,color="blue", label = "Palabra: U"];
 
-Nodo62 [shape=box,color="blue", label = "Palabra: H"];
+Nodo62 [shape=box,color="blue", label = "Palabra: U"];
 
-Nodo63 [shape=box,color="blue", label = "Palabra: E"];
+Nodo63 [shape=box,color="blue", label = "Palabra: A"];
 
-Nodo64 [shape=box,color="blue", label = "Palabra: B"];
+Nodo64 [shape=box,color="blue", label = "Palabra: S"];
 
-Nodo65 [shape=box,color="blue", label = "Palabra: D"];
+Nodo65 [shape=box,color="blue", label = "Palabra: O"];
 
-Nodo66 [shape=box,color="blue", label = "Palabra: O"];
+Nodo66 [shape=box,color="blue", label = "Palabra: R"];
 
-Nodo67 [shape=box,color="blue", label = "Palabra: I"];
+Nodo67 [shape=box,color="blue", label = "Palabra: A"];
 
-Nodo68 [shape=box,color="blue", label = "Palabra: E"];
+Nodo68 [shape=box,color="blue", label = "Palabra: A"];
 
-Nodo69 [shape=box,color="blue", label = "Palabra: N"];
+Nodo69 [shape=box,color="blue", label = "Palabra: L"];
 
-Nodo70 [shape=box,color="blue", label = "Palabra: O"];
+Nodo70 [shape=box,color="blue", label = "Palabra: Q"];
 
-Nodo71 [shape=box,color="blue", label = "Palabra: S"];
+Nodo71 [shape=box,color="blue", label = "Palabra: A"];
 
-Nodo72 [shape=box,color="blue", label = "Palabra: G"];
+Nodo72 [shape=box,color="blue", label = "Palabra: T"];
 
-Nodo73 [shape=box,color="blue", label = "Palabra: O"];
+Nodo73 [shape=box,color="blue", label = "Palabra: B"];
 
 Nodo74 [shape=box,color="blue", label = "Palabra: O"];
 
-Nodo75 [shape=box,color="blue", label = "Palabra: D"];
+Nodo75 [shape=box,color="blue", label = "Palabra: X"];
 
-Nodo76 [shape=box,color="blue", label = "Palabra: E"];
+Nodo76 [shape=box,color="blue", label = "Palabra: O"];
 
-Nodo77 [shape=box,color="blue", label = "Palabra: S"];
+Nodo77 [shape=box,color="blue", label = "Palabra: E"];
 
-Nodo78 [shape=box,color="blue", label = "Palabra: A"];
+Nodo78 [shape=box,color="blue", label = "Palabra: E"];
 
-Nodo79 [shape=box,color="blue", label = "Palabra: S"];
+Nodo79 [shape=box,color="blue", label = "Palabra: H"];
 
-Nodo80 [shape=box,color="blue", label = "Palabra: A"];
+Nodo80 [shape=box,color="blue", label = "Palabra: N"];
 
-Nodo81 [shape=box,color="blue", label = "Palabra: N"];
+Nodo81 [shape=box,color="blue", label = "Palabra: C"];
 
 Nodo82 [shape=box,color="blue", label = "Palabra: E"];
 
-Nodo83 [shape=box,color="blue", label = "Palabra: E"];
+Nodo83 [shape=box,color="blue", label = "Palabra: U"];
 
-Nodo84 [shape=box,color="blue", label = "Palabra: V"];
+Nodo84 [shape=box,color="blue", label = "Palabra: D"];
 
-Nodo85 [shape=box,color="blue", label = "Palabra: E"];
+Nodo85 [shape=box,color="blue", label = "Palabra: S"];
 
-Nodo86 [shape=box,color="blue", label = "Palabra: D"];
+Nodo86 [shape=box,color="blue", label = "Palabra: Ñ"];
 
-Nodo87 [shape=box,color="blue", label = "Palabra: E"];
+Nodo87 [shape=box,color="blue", label = "Palabra: G"];
 
-Nodo88 [shape=box,color="blue", label = "Palabra: M"];
+Nodo88 [shape=box,color="blue", label = "Palabra: L"];
 
-Nodo89 [shape=box,color="blue", label = "Palabra: D"];
+Nodo89 [shape=box,color="blue", label = "Palabra: R"];
 
-Nodo90 [shape=box,color="blue", label = "Palabra: A"];
+Nodo90 [shape=box,color="blue", label = "Palabra: N"];
 
-Nodo91 [shape=box,color="blue", label = "Palabra: I"];
+Nodo91 [shape=box,color="blue", label = "Palabra: A"];
 
-Nodo92 [shape=box,color="blue", label = "Palabra: T"];
+Nodo92 [shape=box,color="blue", label = "Palabra: Y"];
 
-Nodo93 [shape=box,color="blue", label = "Palabra: Ñ"];
+Nodo93 [shape=box,color="blue", label = "Palabra: S"];
 
-Nodo94 [shape=box,color="blue", label = "Palabra: O"];
+Nodo94 [shape=box,color="blue", label = "Palabra: N"];
 
 Nodo0 -> Nodo1;
 

@@ -85,8 +85,10 @@ public class Usuarios extends javax.swing.JFrame {
         // Agregar Usuario 
         String usuario =jTextField1.getText();
         listaCircular.AgregarListaCircular(usuario);
+        practica1s12017_200915305.ListaCircular.UsuarioActual.add(usuario);
         listaCircular.ImprimirListaCircular();
         listaCircular.GraficarListaCircular();
+   
         cola.GraficarCola();
         
         
