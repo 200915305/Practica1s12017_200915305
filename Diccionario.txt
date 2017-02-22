@@ -25,6 +25,8 @@ Nodo10 [shape=box,color="blue", label = "Palabra: correo"];
 
 Nodo11 [shape=box,color="blue", label = "Palabra: juego"];
 
+Nodo12 [shape=box,color="blue", label = "Palabra: ddd"];
+
 Nodo0 -> Nodo1;
 
 Nodo1 -> Nodo2;
@@ -48,4 +50,6 @@ Nodo9 -> Nodo10;
 Nodo10 -> Nodo11;
 
 Nodo11 -> Nodo12;
-{ rank = same;"Nodo0";"Nodo1";"Nodo2";"Nodo3";"Nodo4";"Nodo5";"Nodo6";"Nodo7";"Nodo8";"Nodo9";"Nodo10";"Nodo11";}}
+
+Nodo12 -> Nodo13;
+{ rank = same;"Nodo0";"Nodo1";"Nodo2";"Nodo3";"Nodo4";"Nodo5";"Nodo6";"Nodo7";"Nodo8";"Nodo9";"Nodo10";"Nodo11";"Nodo12";}}

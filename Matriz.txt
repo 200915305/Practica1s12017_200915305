@@ -83,7 +83,7 @@ label = "Matriz de Juego";
 
 Nodo1 [shape=box,color="blue", label = "TRIPLE
 1"];
-Nodo2 [shape=box,color="blue", label = "null
+Nodo2 [shape=box,color="blue", label = "O
 2"];
 Nodo3 [shape=box,color="blue", label = "null
 3"];
@@ -125,7 +125,7 @@ Nodo21 [shape=box,color="blue", label = "null
 21"];
 Nodo22 [shape=box,color="blue", label = "TRIPLE
 22"];
-Nodo23 [shape=box,color="blue", label = "null
+Nodo23 [shape=box,color="blue", label = "E
 23"];
 Nodo24 [shape=box,color="blue", label = "null
 24"];

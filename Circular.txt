@@ -1,37 +1,29 @@
 digraph G{ 
 label = "Lista Circular";
 
-Nodo0 [shape=box,style=filled,color=".7 .3 1.0", label = "Usuario: dd"];
+Nodo0 [shape=box,style=filled,color=".7 .3 1.0", label = "Usuario: ssd"];
 
-Nodedd0 [shape=box,color="blue", label = "Letra: T"];
+Nodessd0 [shape=box,color="blue", label = "Letra: L"];
 
-Nodedd1 [shape=box,color="blue", label = "Letra: C"];
+Nodessd1 [shape=box,color="blue", label = "Letra: S"];
 
-Nodedd2 [shape=box,color="blue", label = "Letra: I"];
+Nodessd2 [shape=box,color="blue", label = "Letra: A"];
 
-Nodedd3 [shape=box,color="blue", label = "Letra: I"];
+Nodessd3 [shape=box,color="blue", label = "Letra: J"];
 
-Nodedd4 [shape=box,color="blue", label = "Letra: O"];
-
-Nodedd5 [shape=box,color="blue", label = "Letra: A"];
-
-Nodedd6 [shape=box,color="blue", label = "Letra: R"];
+Nodessd4 [shape=box,color="blue", label = "Letra: U"];
 
 Nodo0 -> Nodo0;
 
-Nodedd0 -> Nodedd1;
+Nodessd0 -> Nodessd1;
 
-Nodedd1 -> Nodedd2;
+Nodessd1 -> Nodessd2;
 
-Nodedd2 -> Nodedd3;
+Nodessd2 -> Nodessd3;
 
-Nodedd3 -> Nodedd4;
+Nodessd3 -> Nodessd4;
 
-Nodedd4 -> Nodedd5;
+Nodessd4 -> Nodessd5;
 
-Nodedd5 -> Nodedd6;
-
-Nodedd6 -> Nodedd7;
-
-Nodo0 -> Nodedd0;
-{ rank = same;"Nodo0";"Nodedd0";"Nodedd1";"Nodedd2";"Nodedd3";"Nodedd4";"Nodedd5";"Nodedd6";}}
+Nodo0 -> Nodessd0;
+{ rank = same;"Nodo0";"Nodessd0";"Nodessd1";"Nodessd2";"Nodessd3";"Nodessd4";}}

@@ -1,35 +1,27 @@
 digraph G{ 
 label = "Usuario";
 
-Nodo2 [shape=box,style=filled,color=".7 .3 1.0", label = "Usuario: tres"];
+Nodo0 [shape=box,style=filled,color=".7 .3 1.0", label = "Usuario: ssd"];
 
-Nodetres0 [shape=box,color="blue", label = "Letra: G"];
+Nodessd0 [shape=box,color="blue", label = "Letra: L"];
 
-Nodetres1 [shape=box,color="blue", label = "Letra: M"];
+Nodessd1 [shape=box,color="blue", label = "Letra: S"];
 
-Nodetres2 [shape=box,color="blue", label = "Letra: I"];
+Nodessd2 [shape=box,color="blue", label = "Letra: A"];
 
-Nodetres3 [shape=box,color="blue", label = "Letra: E"];
+Nodessd3 [shape=box,color="blue", label = "Letra: J"];
 
-Nodetres4 [shape=box,color="blue", label = "Letra: U"];
+Nodessd4 [shape=box,color="blue", label = "Letra: U"];
 
-Nodetres5 [shape=box,color="blue", label = "Letra: O"];
+Nodo0 -> Nodessd0;
 
-Nodetres6 [shape=box,color="blue", label = "Letra: A"];
+Nodessd0 -> Nodessd1;
 
-Nodo2 -> Nodetres0;
+Nodessd1 -> Nodessd2;
 
-Nodetres0 -> Nodetres1;
+Nodessd2 -> Nodessd3;
 
-Nodetres1 -> Nodetres2;
+Nodessd3 -> Nodessd4;
 
-Nodetres2 -> Nodetres3;
-
-Nodetres3 -> Nodetres4;
-
-Nodetres4 -> Nodetres5;
-
-Nodetres5 -> Nodetres6;
-
-Nodetres6 -> Nodetres7;
-{ rank = same;"Nodo2";"Nodetres0";"Nodetres1";"Nodetres2";"Nodetres3";"Nodetres4";"Nodetres5";"Nodetres6";}}
+Nodessd4 -> Nodessd5;
+{ rank = same;"Nodo0";"Nodessd0";"Nodessd1";"Nodessd2";"Nodessd3";"Nodessd4";}}
